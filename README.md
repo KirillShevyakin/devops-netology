@@ -8,12 +8,13 @@ Update CHANGELOG.md
   
 
 2. Какому тегу соответствует коммит 85024d3?  
-commit 85024d3100126de36331c6982bfaac02cdab9e76 (tag: v0.12.23)
+commit 85024d3100126de36331c6982bfaac02cdab9e76 (tag: v0.12.23)  
 v0.12.23  
 
   
 3. Сколько родителей у коммита b8d720? Напишите их хеши.  
-56cd7859e05c36c06b56d013b55a252d0bb7e158 9ea88f22fc6269854151c571162c5bcf958bee2b  
+56cd7859e05c36c06b56d013b55a252d0bb7e158  
+9ea88f22fc6269854151c571162c5bcf958bee2b    
 
 
 4. Перечислите хеши и комментарии всех коммитов которые были сделаны между тегами v0.12.23 и v0.12.24.  
@@ -78,7 +79,7 @@ Date:   Thu Apr 2 18:04:39 2020 -0700
 78b122055 Remove config.go and update things using its aliases  
 52dbf9483 keep .terraform.d/plugins for discovery  
 41ab0aef7 Add missing OS_ARCH dir to global plugin paths  
-66ebff90c move some more plugin search path logic to command
+66ebff90c move some more plugin search path logic to command  
 8364383c3 Push plugin discovery down into command package  
 
 
