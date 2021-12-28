@@ -7,8 +7,8 @@
   
 6. Ознакомьтесь с возможностями конфигурации VirtualBox через Vagrantfile: документация. Как добавить оперативной памяти или ресурсов процессора виртуальной машине?  
 config.vm.provider "virtualbox" do |v|  
-  v.memory = 1024  
-  v.cpus = 2  
+    v.memory = 1024  
+    v.cpus = 2  
 end  
   
 7. 
