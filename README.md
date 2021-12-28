@@ -16,7 +16,7 @@ end
 какой переменной можно задать длину журнала history, и на какой строчке manual это описывается?  
 ![image](https://user-images.githubusercontent.com/93198418/147567701-a8ccd2a8-6c7f-46dd-88f0-f30c09b73437.png)  
 718 строка  
-![image](https://user-images.githubusercontent.com/93198418/147567765-b0c61334-dbc2-4628-9857-6a4fb9977d32.png)
+![image](https://user-images.githubusercontent.com/93198418/147567765-b0c61334-dbc2-4628-9857-6a4fb9977d32.png)  
 что делает директива ignoreboth в bash?  
 ![image](https://user-images.githubusercontent.com/93198418/147568472-fc378ce1-6ccf-431b-8102-149dc0193658.png)  
 710 строка  
@@ -29,11 +29,10 @@ end
   
 10. С учётом ответа на предыдущий вопрос, как создать однократным вызовом touch 100000 файлов? Получится ли аналогичным образом создать 300000? Если нет, то почему?  
 <code>  
-root@vagrant:/home/vagrant# touch {000001..100000}.txt  
-root@vagrant:/home/vagrant# touch {100001..400000}.txt  
-bash: /usr/bin/touch: Argument list too long  
-</code>  
-
+  root@vagrant:/home/vagrant# touch {000001..100000}.txt  
+  root@vagrant:/home/vagrant# touch {100001..400000}.txt  
+  bash: /usr/bin/touch: Argument list too long  
+</code>
 
 
 
