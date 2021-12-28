@@ -28,12 +28,13 @@ end
 ![image](https://user-images.githubusercontent.com/93198418/147569900-00c9a861-196e-42d5-b0c9-20ac7aecacdd.png)  
   
 10. С учётом ответа на предыдущий вопрос, как создать однократным вызовом touch 100000 файлов? Получится ли аналогичным образом создать 300000? Если нет, то почему?  
-<code>  
-  root@vagrant:/home/vagrant# touch {000001..100000}.txt    
-  root@vagrant:/home/vagrant# touch {100001..400000}.txt    
-  bash: /usr/bin/touch: Argument list too long    
-</code>
-
+root@vagrant:/home/vagrant# touch {000001..100000}.txt  
+root@vagrant:/home/vagrant# touch {100001..400000}.txt  
+bash: /usr/bin/touch: Argument list too long  
+  
+11. В man bash поищите по /\[\[. Что делает конструкция [[ -d /tmp ]]  
+![image](https://user-images.githubusercontent.com/93198418/147572177-0e8ae5da-322b-41ed-8374-e90a0eb05660.png)  
+Эта команда проверяет наличие каталога tmp в корне
 
 
 
