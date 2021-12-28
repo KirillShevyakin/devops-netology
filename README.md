@@ -30,9 +30,12 @@ end
   
 10. С учётом ответа на предыдущий вопрос, как создать однократным вызовом touch 100000 файлов? Получится ли аналогичным образом создать 300000? Если нет, то почему?
 <code>
-touch {000001..100000}.txt
+root@vagrant:/home/vagrant# touch {000001..100000}.txt
 </code>
-
+<code>
+root@vagrant:/home/vagrant# touch {100001..400000}.txt
+bash: /usr/bin/touch: Argument list too long
+</code>
 
 
 
