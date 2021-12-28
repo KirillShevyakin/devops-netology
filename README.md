@@ -13,6 +13,12 @@
   
 7. Ознакомиться с разделами man bash, почитать о настройках самого bash:  
 какой переменной можно задать длину журнала history, и на какой строчке manual это описывается?  
+![image](https://user-images.githubusercontent.com/93198418/147567701-a8ccd2a8-6c7f-46dd-88f0-f30c09b73437.png)  
+  
+718 строка  
+![image](https://user-images.githubusercontent.com/93198418/147567765-b0c61334-dbc2-4628-9857-6a4fb9977d32.png)
+
+
 
 
 
