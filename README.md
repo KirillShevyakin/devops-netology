@@ -23,15 +23,15 @@ end
 ![image](https://user-images.githubusercontent.com/93198418/147568540-d3b88a04-f326-435f-b2ac-efb45efdf769.png)  
 
 9. В каких сценариях использования применимы скобки {} и на какой строчке man bash это описано?
-![image](https://user-images.githubusercontent.com/93198418/147569822-aa1b8964-abc7-4bc5-a629-8f685b3b0f6f.png)  
+![image](https://user-images.githubusercontent.com/93198418/147569822-aa1b8964-abc7-4bc5-a629-8f685b3b0f6f.png)    
 926 строка  
-![image](https://user-images.githubusercontent.com/93198418/147569900-00c9a861-196e-42d5-b0c9-20ac7aecacdd.png)
+![image](https://user-images.githubusercontent.com/93198418/147569900-00c9a861-196e-42d5-b0c9-20ac7aecacdd.png)  
   
 10. С учётом ответа на предыдущий вопрос, как создать однократным вызовом touch 100000 файлов? Получится ли аналогичным образом создать 300000? Если нет, то почему?  
-<code>
-root@vagrant:/home/vagrant# touch {000001..100000}.txt
-root@vagrant:/home/vagrant# touch {100001..400000}.txt
-bash: /usr/bin/touch: Argument list too long
+<code>  
+root@vagrant:/home/vagrant# touch {000001..100000}.txt  
+root@vagrant:/home/vagrant# touch {100001..400000}.txt  
+bash: /usr/bin/touch: Argument list too long  
 </code>  
 
 
