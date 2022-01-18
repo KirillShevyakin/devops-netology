@@ -40,7 +40,7 @@ I used to have a really wretched example of clueless code (which I had written u
 Вместо grep <some_string> <some_file> | wc -l можно использовать grep -c <some_string> <some_file>  
 
 3) Какой процесс с PID 1 является родителем для всех процессов в вашей виртуальной машине Ubuntu 20.04?  
-  ![image](https://user-images.githubusercontent.com/93198418/149890591-0a3d8aab-2fb5-4435-997f-5ea29029a0db.png)
+  ![image](https://user-images.githubusercontent.com/93198418/149890591-0a3d8aab-2fb5-4435-997f-5ea29029a0db.png)  
   systemd - это менеджер начальной загрузки ОС  
   
 4) Как будет выглядеть команда, которая перенаправит вывод stderr ls на другую сессию терминала?  
