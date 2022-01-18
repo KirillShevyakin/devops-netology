@@ -22,3 +22,18 @@
   
 4) Как будет выглядеть команда, которая перенаправит вывод stderr ls на другую сессию терминала?  
 
+![image](https://user-images.githubusercontent.com/93198418/149893790-fb80a34b-29e9-43d7-986e-168baaa6fac2.png)  
+![image](https://user-images.githubusercontent.com/93198418/149893897-d9686f87-6ed6-4014-903e-2bc76b03ca6c.png)  
+![image](https://user-images.githubusercontent.com/93198418/149894002-594e10db-89f5-4ad7-b2fa-856d8a745fc2.png)  
+
+5) Получится ли одновременно передать команде файл на stdin и вывести ее stdout в другой файл? Приведите работающий пример.  
+
+![image](https://user-images.githubusercontent.com/93198418/149895163-904f9ae9-a5ec-42dd-bfd3-226b33e7f90a.png)  
+
+6) Получится ли находясь в графическом режиме, вывести данные из PTY в какой-либо из эмуляторов TTY? Сможете ли вы наблюдать выводимые данные?  
+
+
+
+
+
+
