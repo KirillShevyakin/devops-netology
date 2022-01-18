@@ -32,6 +32,17 @@
 
 6) Получится ли находясь в графическом режиме, вывести данные из PTY в какой-либо из эмуляторов TTY? Сможете ли вы наблюдать выводимые данные?  
 
+![image](https://user-images.githubusercontent.com/93198418/149914773-81645400-b473-4c79-bcc7-489369fbbf99.png)  
+![image](https://user-images.githubusercontent.com/93198418/149914835-a3a227b7-c364-4110-bc3a-56518ac3e551.png)  
+![image](https://user-images.githubusercontent.com/93198418/149915100-59d64b44-30e3-41da-9f4b-adf260915caf.png)  
+![image](https://user-images.githubusercontent.com/93198418/149915161-5a55c017-078b-4fbe-a81f-fc453b830bfc.png)  
+
+Да можно, если перенаправить вывод, вот так например 1>/dev/tty1  
+
+7) Выполните команду bash 5>&1. К чему она приведет? Что будет, если вы выполните echo netology > /proc/$$/fd/5? Почему так происходит?  
+
+
+
 
 
 
