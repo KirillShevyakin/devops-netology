@@ -43,7 +43,7 @@
 
 bash 5>&1
 ![image](https://user-images.githubusercontent.com/93198418/149916064-070d7e20-66c5-4e49-813b-318794d65a51.png)  
-Создался файловый дескриптор 5 и перенаправит его stdout
+Создался файловый дескриптор 5 и перенаправление его в stdout
 
 echo netology > /proc/$$/fd/5  
 ![image](https://user-images.githubusercontent.com/93198418/149916336-55df94c7-af56-48f4-a7a2-f384361af6ca.png)  
