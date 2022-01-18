@@ -4,6 +4,7 @@
 ### Домашнее задание к занятию "3.2. Работа в терминале, лекция 2"  
   
 1) Какого типа команда cd? Попробуйте объяснить, почему она именно такого типа; опишите ход своих мыслей, если считаете что она могла бы быть другого типа.  
+  
     root@vagrant:/home/vagrant# cd --help
     cd: cd [-L|[-P [-e]] [-@]] [dir]
     Change the shell working directory.
@@ -20,9 +21,10 @@
     the word is assumed to be  a variable name.  If that variable has a value,
     its value is used for DIR.
         
-    Команда cd меняет рабочую директорию в shell. Это внутренняя команда в shell, которая вызывает внутренюю функцию в shell изменения рабочей директории. Я думаю, что она не может быть другого     типа, потому что если бы она была внешним вызовом, то каждый раз при переходе в другую директорию, приходилось бы запускать новый shell.  
+    Команда cd меняет рабочую директорию в shell. Это внутренняя команда в shell, которая вызывает внутренюю функцию в shell изменения рабочей директории. Я думаю, что она не может быть другого типа, потому что если бы она была внешним вызовом, то каждый раз при переходе в другую директорию, приходилось бы запускать новый shell.  
 
 2) Какая альтернатива без pipe команде grep <some_string> <some_file> | wc -l? man grep поможет в ответе на этот вопрос. Ознакомьтесь с документом о других подобных некорректных вариантах использования pipe.  
+  
   This is my personal favorite. There is actually a whole class of "Useless Use of (something) | grep (something) | (something)" problems but this one usually manifests itself   in scripts riddled by useless backticks and pretzel logic.
 Anything that looks like
 
@@ -40,6 +42,7 @@ I used to have a really wretched example of clueless code (which I had written u
 Вместо grep <some_string> <some_file> | wc -l можно использовать grep -c <some_string> <some_file>  
 
 3) Какой процесс с PID 1 является родителем для всех процессов в вашей виртуальной машине Ubuntu 20.04?  
+  
   ![image](https://user-images.githubusercontent.com/93198418/149890591-0a3d8aab-2fb5-4435-997f-5ea29029a0db.png)  
   systemd - это менеджер начальной загрузки ОС  
   
