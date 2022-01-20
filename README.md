@@ -8,7 +8,7 @@
 ![image](https://user-images.githubusercontent.com/93198418/150311164-5cf571e8-45d8-4954-a63a-6dc5dc714494.png)  
 chdir("/tmp")  
 
-2) Попробуйте использовать команду file на объекты разных типов на файловой системе. Например:
+2) Попробуйте использовать команду file на объекты разных типов на файловой системе. Например:  
 vagrant@netology1:~$ file /dev/tty
 /dev/tty: character special (5/0)
 vagrant@netology1:~$ file /dev/sda
