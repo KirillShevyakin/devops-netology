@@ -11,8 +11,7 @@ chdir("/tmp")
 2) Попробуйте использовать команду file на объекты разных типов на файловой системе. Например:  
 <code>  
   vagrant@netology1:~$ file /dev/tty
-  
-  /dev/tty: character special (5/0)
+    /dev/tty: character special (5/0)
   
   vagrant@netology1:~$ file /dev/sda
   
