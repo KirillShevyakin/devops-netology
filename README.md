@@ -17,6 +17,7 @@ chdir("/tmp")
     vagrant@netology1:~$ file /bin/bash  
     /bin/bash: ELF 64-bit LSB shared object, x86-64  
   </code>  
+  
 Используя strace выясните, где находится база данных file на основании которой она делает свои догадки.  
   
 ![image](https://user-images.githubusercontent.com/93198418/150312672-7f42c9df-b1a0-4168-82ae-55c119ff3e8a.png)  
