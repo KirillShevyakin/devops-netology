@@ -47,4 +47,16 @@ root@vagrant:~# dpkg -L bpfcc-tools | grep sbin/opensnoop
 
 6) Какой системный вызов использует uname -a? Приведите цитату из man по этому системному вызову, где описывается альтернативное местоположение в /proc, где можно узнать версию ядра и релиз ОС.  
 
+![image](https://user-images.githubusercontent.com/93198418/150341162-7ddec539-0c09-4b44-babe-afa82b060c1e.png)  
+![image](https://user-images.githubusercontent.com/93198418/150341524-453e4a60-28ef-4e39-b56c-63c72f364bd7.png)  
+
+7) Чем отличается последовательность команд через ; и через && в bash? Например:
+```
+root@netology1:~# test -d /tmp/some_dir; echo Hi  
+Hi  
+root@netology1:~# test -d /tmp/some_dir && echo Hi  
+root@netology1:~#  
+```  
+Есть ли смысл использовать в bash &&, если применить set -e?  
+
 
