@@ -10,8 +10,8 @@ chdir("/tmp")
 
 2) Попробуйте использовать команду file на объекты разных типов на файловой системе. Например:  
   <code>
-      vagrant@netology1:~$ file /dev/tty  
-      /dev/tty: character special (5/0)  
+      vagrant@netology1:~$ file /dev/tty<br/>  
+      /dev/tty: character special (5/0)  <br/>
       vagrant@netology1:~$ file /dev/sda  
       /dev/sda: block special (8/0)  
       vagrant@netology1:~$ file /bin/bash  
