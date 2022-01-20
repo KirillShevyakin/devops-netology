@@ -9,8 +9,7 @@
 chdir("/tmp")  
 
 2) Попробуйте использовать команду file на объекты разных типов на файловой системе. Например:  
-```
-      vagrant@netology1:~$ file /dev/tty    
+```   vagrant@netology1:~$ file /dev/tty    
       /dev/tty: character special (5/0)    
       vagrant@netology1:~$ file /dev/sda    
       /dev/sda: block special (8/0)  
