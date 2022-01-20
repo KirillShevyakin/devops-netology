@@ -33,5 +33,14 @@ openat(AT_FDCWD, "/usr/share/misc/magic.mgc", O_RDONLY) = 3
 
 4) Занимают ли зомби-процессы какие-то ресурсы в ОС (CPU, RAM, IO)?  
 
+![image](https://user-images.githubusercontent.com/93198418/150331968-57bf2298-e3cc-4633-9629-98bc2add95cb.png)  
+Зомби-процессы ничего не используют, кроме записи в таблице процессов  
+
+5) В iovisor BCC есть утилита opensnoop:  
+```
+root@vagrant:~# dpkg -L bpfcc-tools | grep sbin/opensnoop  
+/usr/sbin/opensnoop-bpfcc  
+```  
+На какие файлы вы увидели вызовы группы open за первую секунду работы утилиты? Воспользуйтесь пакетом bpfcc-tools для Ubuntu 20.04. Дополнительные сведения по установке.  
 
 
