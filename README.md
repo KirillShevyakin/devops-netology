@@ -73,6 +73,29 @@ config.vm.network "forwarded_port", guest: 19999, host: 19999
 
 5) Как настроен sysctl fs.nr_open на системе по-умолчанию? Узнайте, что означает этот параметр. Какой другой существующий лимит не позволит достичь такого числа (ulimit --help)?
 
+![image](https://user-images.githubusercontent.com/93198418/150761208-ded9de2e-4085-431c-8543-be5e0ae3b709.png)  
+fs.nr_open - это лимит открытия файлов в 1 процессе
+
+![image](https://user-images.githubusercontent.com/93198418/150762481-cc3b4dae-c1cb-422d-966a-00bda48fb2a8.png)  
+Поскольку в ulimit количество всего открытых файлов 1024, то это не даст сработать fs.nr_open
+
+6) Запустите любой долгоживущий процесс (не ls, который отработает мгновенно, а, например, sleep 1h) в отдельном неймспейсе процессов; покажите, что ваш процесс работает под PID 1 через nsenter. Для простоты работайте в данном задании под root (sudo -i). Под обычным пользователем требуются дополнительные опции (--map-root-user) и т.д.
+
+![image](https://user-images.githubusercontent.com/93198418/150772857-249ebd89-4a5b-48e2-836b-769c9199efb6.png)  
+![image](https://user-images.githubusercontent.com/93198418/150772914-89afa0e4-bea6-44b3-a874-f3f70184cde9.png)  
+
+7) Найдите информацию о том, что такое :(){ :|:& };:. Запустите эту команду в своей виртуальной машине Vagrant с Ubuntu 20.04 (это важно, поведение в других ОС не проверялось). Некоторое время все будет "плохо", после чего (минуты) – ОС должна стабилизироваться. Вызов dmesg расскажет, какой механизм помог автоматической стабилизации. Как настроен этот механизм по-умолчанию, и как изменить число процессов, которое можно создать в сессии?
+
+:(){ :|:& };: - это функция, которая параллельно пускает два своих экземпляра. Каждый пускает ещё по два и т.д.
+
+![image](https://user-images.githubusercontent.com/93198418/150776011-ae54589a-8ad1-45ba-8e2e-bff7e09f3a97.png)  
+![image](https://user-images.githubusercontent.com/93198418/150781023-e43d3302-2f12-4f03-b97a-1e1d323aa509.png)  
+![image](https://user-images.githubusercontent.com/93198418/150781639-15d15cc4-848c-49aa-98d0-21dd3e1653b4.png)  
+cgroup: fork rejected by pids controller in /user.slice/user-1000.slice/session-9.scope  
+
+![image](https://user-images.githubusercontent.com/93198418/150781255-c083ddc4-3f86-436d-afde-1c17dd1faf85.png)  
+limit на количество task в сессии, не позволил сделать больше
+
 
 
 
