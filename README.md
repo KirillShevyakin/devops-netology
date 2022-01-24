@@ -94,8 +94,8 @@ fs.nr_open - это лимит открытия файлов в 1 процесс
 cgroup: fork rejected by pids controller in /user.slice/user-1000.slice/session-9.scope  
 
 ![image](https://user-images.githubusercontent.com/93198418/150781255-c083ddc4-3f86-436d-afde-1c17dd1faf85.png)  
-limit на количество task в сессии, не позволил сделать больше
-
+limit на количество task в сессии, не позволил сделать больше  
+Для того, чтобы увеличить или уменьшить этот limit, нужно поменять это значение: /sys/fs/cgroup/pids/user.slice/user-1000.slice/pids.max  
 
 
 
