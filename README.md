@@ -9,7 +9,8 @@
 предусмотрите возможность добавления опций к запускаемому процессу через внешний файл (посмотрите, например, на systemctl cat cron),
 удостоверьтесь, что с помощью systemctl процесс корректно стартует, завершается, а после перезагрузки автоматически поднимается.
 
-![image](https://user-images.githubusercontent.com/93198418/150731305-096be1fd-d895-4cbe-966c-de3230c22f60.png)  
+![image](https://user-images.githubusercontent.com/93198418/151307958-94f8468b-8d81-46c8-9897-e3e72ad0341b.png)  
+
 ![image](https://user-images.githubusercontent.com/93198418/150731433-c0b51763-a46f-40ec-96c0-0cec85dd1ca1.png)  
 ![image](https://user-images.githubusercontent.com/93198418/150731558-0e5d8541-e06d-4405-a0d1-ed1f70022cf6.png)  
 ![image](https://user-images.githubusercontent.com/93198418/150731635-25bd9bb7-dc59-46ac-aec0-c10fd80de034.png)  
