@@ -61,8 +61,26 @@ end
 
 11) Создайте mkfs.ext4 ФС на получившемся LV.
 
+![image](https://user-images.githubusercontent.com/93198418/151980759-24fec6a2-20c9-4c6a-8370-f71969141f81.png)  
 
+12) Смонтируйте этот раздел в любую директорию, например, /tmp/new.
 
+![image](https://user-images.githubusercontent.com/93198418/151981209-45329032-9bdb-4bf2-a1b7-021e28562a40.png)  
+
+13) Поместите туда тестовый файл, например wget https://mirror.yandex.ru/ubuntu/ls-lR.gz -O /tmp/new/test.gz.
+
+![image](https://user-images.githubusercontent.com/93198418/151981681-1ab56753-4dc4-456a-af13-1a699e73258d.png)
+
+14) Прикрепите вывод lsblk.
+
+![image](https://user-images.githubusercontent.com/93198418/151981835-5df1e806-3e89-4bf5-9f6e-e45c7c43b045.png)  
+
+15) Протестируйте целостность файла:  
+```
+root@vagrant:~# gzip -t /tmp/new/test.gz  
+root@vagrant:~# echo $?  
+0  
+```
 
 
 
