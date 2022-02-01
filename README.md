@@ -53,8 +53,9 @@ end
 
 9) Создайте общую volume-group на этих двух PV.  
 
+![image](https://user-images.githubusercontent.com/93198418/151976793-23c4127e-6f20-4b39-836c-1569bb4e2244.png)  
 
-
+10) Создайте LV размером 100 Мб, указав его расположение на PV с RAID0.
 
 
 
