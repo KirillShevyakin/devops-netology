@@ -37,3 +37,8 @@ end
 
 5) Используя sfdisk, перенесите данную таблицу разделов на второй диск.  
 
+![image](https://user-images.githubusercontent.com/93198418/151963973-ef3aa576-67a2-4e5a-89ac-c6fefcd1e335.png)  
+
+6) Соберите mdadm RAID1 на паре разделов 2 Гб.
+
+
