@@ -49,6 +49,13 @@ end
 
 8) Создайте 2 независимых PV на получившихся md-устройствах.
 
+![image](https://user-images.githubusercontent.com/93198418/151976247-e056f89c-04e7-483c-ab23-cf5399d7bbb1.png)  
+
+9) Создайте общую volume-group на этих двух PV.  
+
+
+
+
 
 
 
