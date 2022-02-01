@@ -41,4 +41,10 @@ end
 
 6) Соберите mdadm RAID1 на паре разделов 2 Гб.
 
+![image](https://user-images.githubusercontent.com/93198418/151971875-cf0fc4c4-81c2-4953-aeab-f957291d0a77.png)  
+
+7) Соберите mdadm RAID0 на второй паре маленьких разделов.
+
+
+
 
