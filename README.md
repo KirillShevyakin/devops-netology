@@ -45,6 +45,11 @@ end
 
 7) Соберите mdadm RAID0 на второй паре маленьких разделов.
 
+![image](https://user-images.githubusercontent.com/93198418/151974420-a89af1bb-9b34-4ecd-9e3f-dcd7496561b3.png)  
+
+8) Создайте 2 независимых PV на получившихся md-устройствах.
+
+
 
 
 
