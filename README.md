@@ -57,6 +57,11 @@ end
 
 10) Создайте LV размером 100 Мб, указав его расположение на PV с RAID0.
 
+![image](https://user-images.githubusercontent.com/93198418/151979884-479362a8-7f6b-49b2-bf0e-8851040ef3a9.png)  
+
+11) Создайте mkfs.ext4 ФС на получившемся LV.
+
+
 
 
 
