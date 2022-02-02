@@ -82,5 +82,11 @@ root@vagrant:~# echo $?
 0  
 ```
 
+![image](https://user-images.githubusercontent.com/93198418/152101294-1936d581-036a-42c0-8298-0193ce991f98.png)  
+
+16) Используя pvmove, переместите содержимое PV с RAID0 на RAID1.
+
+
+
 
 
