@@ -90,4 +90,21 @@ root@vagrant:~# echo $?
 
 17) Сделайте --fail на устройство в вашем RAID1 md.
 
+![image](https://user-images.githubusercontent.com/93198418/152102184-371de60e-1c51-43e3-a962-1adb5f0f8d40.png)  
 
+18) Подтвердите выводом dmesg, что RAID1 работает в деградированном состоянии.
+
+![image](https://user-images.githubusercontent.com/93198418/152102271-89a765d9-e7c5-447b-8346-a3576f516550.png)  
+
+19) Протестируйте целостность файла, несмотря на "сбойный" диск он должен продолжать быть доступен:
+```
+root@vagrant:~# gzip -t /tmp/new/test.gz  
+root@vagrant:~# echo $?  
+0  
+```
+
+![image](https://user-images.githubusercontent.com/93198418/152102434-01988db6-3e5b-48d4-89af-84e281b28249.png)  
+
+20) Погасите тестовый хост, vagrant destroy.
+
+Сделано
