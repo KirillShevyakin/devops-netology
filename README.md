@@ -86,7 +86,8 @@ root@vagrant:~# echo $?
 
 16) Используя pvmove, переместите содержимое PV с RAID0 на RAID1.
 
+![image](https://user-images.githubusercontent.com/93198418/152101790-3a2d6fe0-368b-4243-8f5c-95dfb1cc6c31.png)  
 
-
+17) Сделайте --fail на устройство в вашем RAID1 md.
 
 
