@@ -1,110 +1,60 @@
 # devops-netology  
 ## Шевякин Кирилл  
 
-### Домашнее задание к занятию "3.5. Файловые системы"
+### Домашнее задание к занятию "3.6. Компьютерные сети, лекция 1"
   
-1) Узнайте о sparse (разряженных) файлах.  
-
-![image](https://user-images.githubusercontent.com/93198418/151925249-1a25a88b-bb33-410b-8c94-a4e8db44d7b3.png)  
-
-2) Могут ли файлы, являющиеся жесткой ссылкой на один объект, иметь разные права доступа и владельца? Почему?  
-
-![image](https://user-images.githubusercontent.com/93198418/151926482-8b426d23-8551-4597-ae2b-8b5cf5c6c60e.png)  
-Файлы, являющиеся жесткой ссылкой на один объект, не могут иметь разные права доступа и владельца, потому что они ссылаются на один и тот же объект файловой системы - один и тот же device и inode.  
-
-3) Сделайте vagrant destroy на имеющийся инстанс Ubuntu. Замените содержимое Vagrantfile следующим:
-
+1) Работа c HTTP через телнет.  
+Подключитесь утилитой телнет к сайту stackoverflow.com telnet stackoverflow.com 80  
 ```
-Vagrant.configure("2") do |config|
-  config.vm.box = "bento/ubuntu-20.04"
-  config.vm.provider :virtualbox do |vb|
-    lvm_experiments_disk0_path = "/tmp/lvm_experiments_disk0.vmdk"
-    lvm_experiments_disk1_path = "/tmp/lvm_experiments_disk1.vmdk"
-    vb.customize ['createmedium', '--filename', lvm_experiments_disk0_path, '--size', 2560]
-    vb.customize ['createmedium', '--filename', lvm_experiments_disk1_path, '--size', 2560]
-    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', lvm_experiments_disk0_path]
-    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 2, '--device', 0, '--type', 'hdd', '--medium', lvm_experiments_disk1_path]
-  end
-end
-```  
-Данная конфигурация создаст новую виртуальную машину с двумя дополнительными неразмеченными дисками по 2.5 Гб.  
-
-![image](https://user-images.githubusercontent.com/93198418/151956362-8ebb643f-d130-461e-a386-e019be24a591.png)  
-
-4) Используя fdisk, разбейте первый диск на 2 раздела: 2 Гб, оставшееся пространство.  
-
-![image](https://user-images.githubusercontent.com/93198418/151962007-5d950874-763f-454b-97d8-11d158230dec.png)  
-
-5) Используя sfdisk, перенесите данную таблицу разделов на второй диск.  
-
-![image](https://user-images.githubusercontent.com/93198418/151963973-ef3aa576-67a2-4e5a-89ac-c6fefcd1e335.png)  
-
-6) Соберите mdadm RAID1 на паре разделов 2 Гб.
-
-![image](https://user-images.githubusercontent.com/93198418/151971875-cf0fc4c4-81c2-4953-aeab-f957291d0a77.png)  
-
-7) Соберите mdadm RAID0 на второй паре маленьких разделов.
-
-![image](https://user-images.githubusercontent.com/93198418/151974420-a89af1bb-9b34-4ecd-9e3f-dcd7496561b3.png)  
-
-8) Создайте 2 независимых PV на получившихся md-устройствах.
-
-![image](https://user-images.githubusercontent.com/93198418/151976247-e056f89c-04e7-483c-ab23-cf5399d7bbb1.png)  
-
-9) Создайте общую volume-group на этих двух PV.  
-
-![image](https://user-images.githubusercontent.com/93198418/151976793-23c4127e-6f20-4b39-836c-1569bb4e2244.png)  
-
-10) Создайте LV размером 100 Мб, указав его расположение на PV с RAID0.
-
-![image](https://user-images.githubusercontent.com/93198418/151979884-479362a8-7f6b-49b2-bf0e-8851040ef3a9.png)  
-
-11) Создайте mkfs.ext4 ФС на получившемся LV.
-
-![image](https://user-images.githubusercontent.com/93198418/151980759-24fec6a2-20c9-4c6a-8370-f71969141f81.png)  
-
-12) Смонтируйте этот раздел в любую директорию, например, /tmp/new.
-
-![image](https://user-images.githubusercontent.com/93198418/151981209-45329032-9bdb-4bf2-a1b7-021e28562a40.png)  
-
-13) Поместите туда тестовый файл, например wget https://mirror.yandex.ru/ubuntu/ls-lR.gz -O /tmp/new/test.gz.
-
-![image](https://user-images.githubusercontent.com/93198418/151981681-1ab56753-4dc4-456a-af13-1a699e73258d.png)
-
-14) Прикрепите вывод lsblk.
-
-![image](https://user-images.githubusercontent.com/93198418/151981835-5df1e806-3e89-4bf5-9f6e-e45c7c43b045.png)  
-
-15) Протестируйте целостность файла:  
+отправьте HTTP запрос  
+GET /questions HTTP/1.0  
+HOST: stackoverflow.com  
+[press enter]  
+[press enter]  
 ```
-root@vagrant:~# gzip -t /tmp/new/test.gz  
-root@vagrant:~# echo $?  
-0  
-```
+В ответе укажите полученный HTTP код, что он означает?
 
-![image](https://user-images.githubusercontent.com/93198418/152101294-1936d581-036a-42c0-8298-0193ce991f98.png)  
+![image](https://user-images.githubusercontent.com/93198418/154200574-59bbc26a-b0a0-407b-8491-bf47cd9ecdd5.png)
 
-16) Используя pvmove, переместите содержимое PV с RAID0 на RAID1.
+Метод «GET» просит сервер отправить копию объекта клиенту. В ответ мы получаем в html копию страницы stackoverflow.com/questions
 
-![image](https://user-images.githubusercontent.com/93198418/152101790-3a2d6fe0-368b-4243-8f5c-95dfb1cc6c31.png)  
+2) Повторите задание 1 в браузере, используя консоль разработчика F12.  
+откройте вкладку Network  
+отправьте запрос http://stackoverflow.com  
+найдите первый ответ HTTP сервера, откройте вкладку Headers  
+укажите в ответе полученный HTTP код.  
+проверьте время загрузки страницы, какой запрос обрабатывался дольше всего?  
+приложите скриншот консоли браузера в ответ.  
 
-17) Сделайте --fail на устройство в вашем RAID1 md.
+![image](https://user-images.githubusercontent.com/93198418/154204075-ea853a0c-a4d1-4869-b2e7-c94dab723488.png)  
 
-![image](https://user-images.githubusercontent.com/93198418/152102184-371de60e-1c51-43e3-a962-1adb5f0f8d40.png)  
+Дольше всего выполнялся запрос  
+![image](https://user-images.githubusercontent.com/93198418/154204325-e47b1083-6343-4e12-89e0-c1862e17bbcc.png)  
 
-18) Подтвердите выводом dmesg, что RAID1 работает в деградированном состоянии.
+3) Какой IP адрес у вас в интернете?  
 
-![image](https://user-images.githubusercontent.com/93198418/152102271-89a765d9-e7c5-447b-8346-a3576f516550.png)  
+![image](https://user-images.githubusercontent.com/93198418/154205467-790a7e1a-16d7-4f6f-a2da-24d04869e170.png)
 
-19) Протестируйте целостность файла, несмотря на "сбойный" диск он должен продолжать быть доступен:
-```
-root@vagrant:~# gzip -t /tmp/new/test.gz  
-root@vagrant:~# echo $?  
-0  
-```
+4) Какому провайдеру принадлежит ваш IP адрес? Какой автономной системе AS? Воспользуйтесь утилитой whois
 
-![image](https://user-images.githubusercontent.com/93198418/152102434-01988db6-3e5b-48d4-89af-84e281b28249.png)  
+![image](https://user-images.githubusercontent.com/93198418/154205997-0d6bba3b-0b2e-4c3d-9e65-decc2005cf45.png)
 
-20) Погасите тестовый хост, vagrant destroy.
+5) Через какие сети проходит пакет, отправленный с вашего компьютера на адрес 8.8.8.8? Через какие AS? Воспользуйтесь утилитой traceroute
 
-Сделано
+![image](https://user-images.githubusercontent.com/93198418/154206509-61adba80-55f5-4222-bd3c-aae1b34f14d4.png)
+
+6) Повторите задание 5 в утилите mtr. На каком участке наибольшая задержка - delay?
+
+![image](https://user-images.githubusercontent.com/93198418/154210526-24ab1d22-ad62-439c-bc2b-e0b948e894a3.png) 
+
+![image](https://user-images.githubusercontent.com/93198418/154210620-8ce61474-f6d8-44de-b788-affd554106ed.png)
+
+7) Какие DNS сервера отвечают за доменное имя dns.google? Какие A записи? воспользуйтесь утилитой dig
+
+![image](https://user-images.githubusercontent.com/93198418/154211136-d6f09a48-7c45-47ad-a231-2cd69a1058b2.png)  
+![image](https://user-images.githubusercontent.com/93198418/154211185-8ad8e77e-b39c-42f8-b5a1-67cbc9bd8ed4.png)  
+
+8) Проверьте PTR записи для IP адресов из задания 7. Какое доменное имя привязано к IP? воспользуйтесь утилитой dig
+
+![image](https://user-images.githubusercontent.com/93198418/154211495-8f36c9fb-8f36-4ca0-96dd-c2394522b76f.png)  
+![image](https://user-images.githubusercontent.com/93198418/154211587-271881e3-021a-4efa-b8db-aa464cdcd0d2.png)
