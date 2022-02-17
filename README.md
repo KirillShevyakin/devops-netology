@@ -87,5 +87,26 @@ Hosts:     192
 
 6) Задача: вас попросили организовать стык между 2-мя организациями. Диапазоны 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 уже заняты. Из какой подсети допустимо взять частные IP адреса? Маску выберите из расчета максимум 40-50 хостов внутри подсети.
 
+100.64.0.0/26
+![image](https://user-images.githubusercontent.com/93198418/154436341-90f95095-a762-4c6f-952d-f4e9357aee28.png)  
 
+7) Как проверить ARP таблицу в Linux, Windows? Как очистить ARP кеш полностью? Как из ARP таблицы удалить только один нужный IP?
 
+Как проверить ARP таблицу в Linux, Windows?  
+Linux
+![image](https://user-images.githubusercontent.com/93198418/154442129-cc2555a8-2131-4cdd-ae7f-d7ca031e4a41.png)  
+
+Windows  
+![image](https://user-images.githubusercontent.com/93198418/154449327-ebc01858-d9e3-40da-ad29-ff92a8c637fb.png)
+
+Как очистить ARP кеш полностью?  
+Linux  
+ip neigh flush all  
+Windows  
+arp -d *  
+
+Как из ARP таблицы удалить только один нужный IP?  
+Linux  
+ip neigh flush 10.0.2.3  
+Windows  
+arp -d 10.0.2.3
