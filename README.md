@@ -56,3 +56,19 @@ mode=5 (balance-tlb)
 
 mode=6 (balance-alb)  
 Адаптивная балансировка нагрузки (более совершенная). Обеспечивает балансировку нагрузки как исходящего (TLB, transmit load balancing), так и входящего трафика (для IPv4 через ARP). Не требует специальной поддержки коммутатором, но требует возможности изменять MAC-адрес устройства.
+
+```
+auto bond0
+
+iface bond0 inet static
+    address 10.31.1.5
+    netmask 255.255.255.0
+    network 10.31.1.0
+    gateway 10.31.1.254
+    bond-slaves eth0 eth1
+    bond-mode active-backup
+    bond-miimon 100
+    bond-downdelay 200
+    bond-updelay 200
+```
+
