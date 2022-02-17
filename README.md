@@ -93,7 +93,7 @@ Hosts:     192
 7) Как проверить ARP таблицу в Linux, Windows? Как очистить ARP кеш полностью? Как из ARP таблицы удалить только один нужный IP?
 
 Как проверить ARP таблицу в Linux, Windows?  
-Linux
+Linux  
 ![image](https://user-images.githubusercontent.com/93198418/154442129-cc2555a8-2131-4cdd-ae7f-d7ca031e4a41.png)  
 
 Windows  
