@@ -135,6 +135,15 @@ http {
 #       }
 #}
 ```
+```
+root@vxus0108:/home/k.shevyakin# cat /etc/nginx/conf.d/upstreams.conf
+upstream upstream_obt {
+    server 10.4.3.62 max_fails=2 fail_timeout=60s;
+    server 10.4.3.63 max_fails=2 fail_timeout=60s;
+    server 10.4.3.69 max_fails=2 fail_timeout=60s;
+    server 10.4.3.70 max_fails=2 fail_timeout=60s;
+}
+```
 
 
 
