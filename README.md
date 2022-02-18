@@ -40,7 +40,7 @@ show bgp x.x.x.x/32
 
 6*) Установите Nginx, настройте в режиме балансировщика TCP или UDP.
 
-Вот, написанный мной, промышленный конфиг nginx-web-proxy
+Вот, написанный мной, работающий, промышленный конфиг nginx-web-proxy
 ```
 root@vxus0108:/home/k.shevyakin# cat /etc/nginx/nginx.conf
 user www-data;
