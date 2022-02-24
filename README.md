@@ -40,4 +40,10 @@
 
 7) Соберите дамп трафика утилитой tcpdump в формате pcap, 100 пакетов. Откройте файл pcap в Wireshark.
 
+![image](https://user-images.githubusercontent.com/93198418/155531122-3149057e-765d-483f-8b3a-35ce829271db.png)  
+![image](https://user-images.githubusercontent.com/93198418/155531045-8219bd55-88ea-4abc-bec0-b3399f2ed2a4.png)
+
+8*) Просканируйте хост scanme.nmap.org. Какие сервисы запущены?
+
+9*) Установите и настройте фаервол ufw на web-сервер из задания 3. Откройте доступ снаружи только к портам 22,80,443
 
