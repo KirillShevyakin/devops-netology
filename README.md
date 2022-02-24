@@ -34,3 +34,10 @@
 
 6) Переименуйте файлы ключей из задания 5. Настройте файл конфигурации SSH клиента, так чтобы вход на удаленный сервер осуществлялся по имени сервера.
 
+![image](https://user-images.githubusercontent.com/93198418/155527614-a87ccc0c-999c-4754-851f-12137c26ddd1.png)  
+![image](https://user-images.githubusercontent.com/93198418/155527852-8e63a2bf-d7a8-413b-a7c4-0083bc1be527.png)  
+![image](https://user-images.githubusercontent.com/93198418/155527667-d273952f-d01d-4a5f-a1f6-d398828a5d5b.png)  
+
+7) Соберите дамп трафика утилитой tcpdump в формате pcap, 100 пакетов. Откройте файл pcap в Wireshark.
+
+
