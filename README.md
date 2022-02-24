@@ -45,5 +45,8 @@
 
 8*) Просканируйте хост scanme.nmap.org. Какие сервисы запущены?
 
+![image](https://user-images.githubusercontent.com/93198418/155537816-6002ea84-5e8f-4195-a18d-99f6f8d17688.png)
+
 9*) Установите и настройте фаервол ufw на web-сервер из задания 3. Откройте доступ снаружи только к портам 22,80,443
 
+![image](https://user-images.githubusercontent.com/93198418/155534322-035d9016-daed-41f6-92b8-d99d12cf3c7c.png)
