@@ -124,7 +124,7 @@ done
 ### Ваш скрипт:
 ```bash
 #!/bin/bash
-commitRegex='^(\[[[a-zA-Z0-9\-\]*])'
+commitRegex='^(\[[a-zA-Z0-9\-]\]*)'
 if ((expr length $commitRegex < 30))
 then
         if ((! grep -qE "$commitRegex" "$1"))
