@@ -123,5 +123,17 @@ done
 
 ### Ваш скрипт:
 ```bash
-???
+#!/bin/bash
+commitRegex='^(\[[[a-zA-Z0-9\-\]*])'
+if ((expr length $commitRegex < 30))
+then
+        if ((! grep -qE "$commitRegex" "$1"))
+        then
+                echo "Aborting according commit message policy. Please specify issue [XXXX] and less 30 symbols"
+                exit 1
+        fi
+else
+        echo "Aborting according commit message policy. Please specify issue [XXXX] and less 30 symbols"
+        exit 1
+fi
 ```
