@@ -96,7 +96,25 @@ done
 
 ### Ваш скрипт:
 ```bash
-???
+#!/bin/bash
+echo -n "" > log
+echo -n "" > error
+hosts=(192.168.0.1 173.194.222.113 87.250.250.242)
+for h in ${hosts[@]}
+do
+        for i in {1..5}
+        do
+                curl -s $h:80 > /dev/null
+                dostup=$?
+                if (( $dostup == 0 ))
+                then
+                        echo "хост $h доступен" >> log
+                else
+                        echo "хост $h недоступен" >> error
+                        exit 0
+                fi
+        done
+done
 ```
 
 ## Дополнительное задание (со звездочкой*) - необязательно к выполнению
