@@ -38,14 +38,31 @@ for result in result_os.split('\n'):
         break
 ```
 
+1) убрал переменную is_change
+2) добавил переменную с путем до директории git, чтобы видно было полный путь до файла
+3) убрал break, чтобы выводить все файлы
 ### Ваш скрипт:
 ```python
-???
+#!/usr/bin/env python3
+
+import os
+
+git_path = '/home/vagrant/devops-netology/'
+bash_command = ["cd ~/devops-netology", "git status"]
+result_os = os.popen(' && '.join(bash_command)).read()
+for result in result_os.split('\n'):
+        if result.find('modified') != -1:
+                prepare_result = result.replace('\tmodified:   ', '')
+                print(git_path,end="")
+                print(prepare_result)
+
 ```
 
 ### Вывод скрипта при запуске при тестировании:
 ```
-???
+vagrant@vagrant:~$ ./dz.py
+/home/vagrant/devops-netology/test/test1.txt
+/home/vagrant/devops-netology/test_dz.txt
 ```
 
 ## Обязательная задача 3
