@@ -49,7 +49,7 @@ for result in result_os.split('\n'):
 import os
 
 git_path = '/home/vagrant/devops-netology/'
-bash_command = ["cd ~/devops-netology", "git status"]
+bash_command = ["cd "+git_path, "git status"]
 result_os = os.popen(' && '.join(bash_command)).read()
 for result in result_os.split('\n'):
         if result.find('modified') != -1:
@@ -72,29 +72,50 @@ vagrant@vagrant:~$ ./dz.py
 ### Решение:  
 Доработка своего скрипта  
 1) добавил модуль sys  
-2) поменял значение переменной git_path на введеный аргумент при запуске  
+2) добавил условие для введенных аргументов
+   если есть аргумент и он правильный, то значение переменной git_path устанавливается на введеный аргумент при запуске  
+   если есть аргумент и он неправильный, то выводится сообщение об неверно введенном аргументе
+   если нет аргумента, то значение переменной git_path устанавливается на локальный репозиторий, который был до этого
 ### Ваш скрипт:
 ```python
 #!/usr/bin/env python3
 
 import os, sys
 
-git_path = sys.argv[1]
-bash_command = ["cd "+git_path, "git status"]
-result_os = os.popen(' && '.join(bash_command)).read()
-for result in result_os.split('\n'):
-        if result.find('modified') != -1:
-                prepare_result = result.replace('\tmodified:   ', '')
-                print(git_path,end="")
-                print(prepare_result)
+if len(sys.argv) > 1:
+        git_path = sys.argv[1]
+        bash_command = ["cd "+git_path, "git status 2>&1"]
+        result_os = os.popen(' && '.join(bash_command)).read()
+        if result_os.find('fatal') == -1:
+                for result in result_os.split('\n'):
+                        if result.find('modified') != -1:
+                                prepare_result = result.replace('\tmodified:   ', '')
+                                print(git_path,end="")
+                                print(prepare_result)
+        else:
+                print(git_path," не является репозиторием git")
+else:
+        git_path = '/home/vagrant/devops-netology/'
+        bash_command = ["cd "+git_path, "git status"]
+        result_os = os.popen(' && '.join(bash_command)).read()
+        for result in result_os.split('\n'):
+                if result.find('modified') != -1:
+                        prepare_result = result.replace('\tmodified:   ', '')
+                        print(git_path,end="")
+                        print(prepare_result)
 
 ```
 
 ### Вывод скрипта при запуске при тестировании:
 ```
-vagrant@vagrant:~$ ./dz.py /home/vagrant/devops-netology
-/home/vagrant/devops-netologytest/test1.txt
-/home/vagrant/devops-netologytest_dz.txt
+vagrant@vagrant:~$ ./dz.py
+/home/vagrant/devops-netology/test/test1.txt
+/home/vagrant/devops-netology/test_dz.txt
+vagrant@vagrant:~$ ./dz.py /home/vagrant/
+/home/vagrant/  не является репозиторием git
+vagrant@vagrant:~$ ./dz.py /home/vagrant/devops-netology/
+/home/vagrant/devops-netology/test/test1.txt
+/home/vagrant/devops-netology/test_dz.txt
 ```
 
 ## Обязательная задача 4
