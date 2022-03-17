@@ -38,9 +38,9 @@ for result in result_os.split('\n'):
         break
 ```
 
-1) убрал переменную is_change
-2) добавил переменную с путем до директории git, чтобы видно было полный путь до файла
-3) убрал break, чтобы выводить все файлы
+1) убрал переменную is_change  
+2) добавил переменную с путем до директории git, чтобы видно было полный путь до файла  
+3) убрал break, чтобы выводить все файлы  
 ### Ваш скрипт:
 ```python
 #!/usr/bin/env python3
@@ -68,14 +68,31 @@ vagrant@vagrant:~$ ./dz.py
 ## Обязательная задача 3
 1. Доработать скрипт выше так, чтобы он мог проверять не только локальный репозиторий в текущей директории, а также умел воспринимать путь к репозиторию, который мы передаём как входной параметр. Мы точно знаем, что начальство коварное и будет проверять работу этого скрипта в директориях, которые не являются локальными репозиториями.
 
+Доработка своего скрипта  
+1) добавил модуль sys  
+2) поменял значение переменной git_path на введеный аргумент при запуске  
 ### Ваш скрипт:
 ```python
-???
+#!/usr/bin/env python3
+
+import os, sys
+
+git_path = sys.argv[1]
+bash_command = ["cd "+git_path, "git status"]
+result_os = os.popen(' && '.join(bash_command)).read()
+for result in result_os.split('\n'):
+        if result.find('modified') != -1:
+                prepare_result = result.replace('\tmodified:   ', '')
+                print(git_path,end="")
+                print(prepare_result)
+
 ```
 
 ### Вывод скрипта при запуске при тестировании:
 ```
-???
+vagrant@vagrant:~$ ./dz.py /home/vagrant/devops-netology
+/home/vagrant/devops-netologytest/test1.txt
+/home/vagrant/devops-netologytest_dz.txt
 ```
 
 ## Обязательная задача 4
