@@ -125,7 +125,7 @@ vagrant@vagrant:~$ ./dz.py /home/vagrant/devops-netology/
 ```python
 #!/usr/bin/env python3
 
-import socket, time, datetime
+import socket, time
 
 srv = { 'drive.google.com':'0.0.0.0', 'mail.google.com':'0.0.0.0', 'google.com':'0.0.0.0' }
 while 1==1:
@@ -135,7 +135,7 @@ while 1==1:
                         srv[host] = host_ip
                         print("[ERROR] ",host," IP mismatch: ", ip, host_ip)
                 else:
-                        print(str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")),host," ",ip)
+                        print(host," ",ip)
         time.sleep(5)
 done
 ```
@@ -145,39 +145,18 @@ done
 vagrant@vagrant:~$ ./dz4.py
 [ERROR]  drive.google.com  IP mismatch:  0.0.0.0 173.194.222.194
 [ERROR]  mail.google.com  IP mismatch:  0.0.0.0 142.251.1.83
-[ERROR]  google.com  IP mismatch:  0.0.0.0 64.233.162.139
-2022-03-17 13:55:40 drive.google.com   173.194.222.194
-[ERROR]  mail.google.com  IP mismatch:  142.251.1.83 142.251.1.18
-2022-03-17 13:55:40 google.com   64.233.162.139
-2022-03-17 13:55:45 drive.google.com   173.194.222.194
-2022-03-17 13:55:45 mail.google.com   142.251.1.18
-2022-03-17 13:55:45 google.com   64.233.162.139
-2022-03-17 13:55:50 drive.google.com   173.194.222.194
-2022-03-17 13:55:50 mail.google.com   142.251.1.18
-2022-03-17 13:55:50 google.com   64.233.162.139
-2022-03-17 13:55:55 drive.google.com   173.194.222.194
-2022-03-17 13:55:55 mail.google.com   142.251.1.18
-2022-03-17 13:55:55 google.com   64.233.162.139
-2022-03-17 13:56:00 drive.google.com   173.194.222.194
-2022-03-17 13:56:00 mail.google.com   142.251.1.18
-2022-03-17 13:56:00 google.com   64.233.162.139
-2022-03-17 13:56:05 drive.google.com   173.194.222.194
-2022-03-17 13:56:05 mail.google.com   142.251.1.18
-2022-03-17 13:56:05 google.com   64.233.162.139
-2022-03-17 13:56:10 drive.google.com   173.194.222.194
-2022-03-17 13:56:10 mail.google.com   142.251.1.18
-2022-03-17 13:56:10 google.com   64.233.162.139
-2022-03-17 13:56:15 drive.google.com   173.194.222.194
-2022-03-17 13:56:15 mail.google.com   142.251.1.18
-2022-03-17 13:56:15 google.com   64.233.162.139
-2022-03-17 13:56:20 drive.google.com   173.194.222.194
-2022-03-17 13:56:20 mail.google.com   142.251.1.18
-[ERROR]  google.com  IP mismatch:  64.233.162.139 64.233.162.100
-2022-03-17 13:56:25 drive.google.com   173.194.222.194
-2022-03-17 13:56:25 mail.google.com   142.251.1.18
-[ERROR]  google.com  IP mismatch:  64.233.162.100 64.233.162.101
-2022-03-17 13:56:30 drive.google.com   173.194.222.194
-2022-03-17 13:56:30 mail.google.com   142.251.1.18
-2022-03-17 13:56:30 google.com   64.233.162.101
+[ERROR]  google.com  IP mismatch:  0.0.0.0 64.233.162.101
+drive.google.com   173.194.222.194
+[ERROR]  mail.google.com  IP mismatch:  142.251.1.83 142.251.1.17
+google.com   64.233.162.101
+drive.google.com   173.194.222.194
+mail.google.com   142.251.1.17
+google.com   64.233.162.101
+drive.google.com   173.194.222.194
+mail.google.com   142.251.1.17
+google.com   64.233.162.101
+drive.google.com   173.194.222.194
+mail.google.com   142.251.1.17
+google.com   64.233.162.101
 ```
 
