@@ -112,6 +112,7 @@ KeyboardInterrupt
 ```json
 vagrant@vagrant:~$ cat hosts.json
 {"drive.google.com": "108.177.14.194", "mail.google.com": "74.125.131.18", "google.com": "173.194.222.113"}
+
 ```
 
 ### yml-файл(ы), который(е) записал ваш скрипт:
