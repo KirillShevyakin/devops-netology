@@ -52,20 +52,72 @@
 
 ### Ваш скрипт:
 ```python
-???
+#!/usr/bin/env python3
+
+import socket, time
+import json, yaml
+
+srv = { 'drive.google.com':'0.0.0.0', 'mail.google.com':'0.0.0.0', 'google.com':'0.0.0.0' }
+json_data = {}
+yaml_data = {}
+while True:
+        for host, ip  in srv.items():
+                host_ip = socket.gethostbyname(host)
+                if ip != host_ip:
+                        srv[host] = host_ip
+                        json_data.update({host:ip})
+                        yaml_data.update({"- "+host:ip})
+                        print(json_data)
+                        print(yaml_data)
+                else:
+                        json_data.update({host:ip})
+                        yaml_data.update({"- "+host:ip})
+                        print("json ",json_data)
+                        print("yaml ",yaml_data)
+        time.sleep(5)
+with open("hosts.json", 'w') as json_file:
+        json.dump(json_data, json_file)
+with open("hosts.yaml",'w') as yaml_file:
+        yaml.dump(yaml_data, yaml_file)
 ```
 
 ### Вывод скрипта при запуске при тестировании:
 ```
-???
+vagrant@vagrant:~$ ./dz4.py
+{'drive.google.com': '0.0.0.0'}
+{'- drive.google.com': '0.0.0.0'}
+{'drive.google.com': '0.0.0.0', 'mail.google.com': '0.0.0.0'}
+{'- drive.google.com': '0.0.0.0', '- mail.google.com': '0.0.0.0'}
+{'drive.google.com': '0.0.0.0', 'mail.google.com': '0.0.0.0', 'google.com': '0.0.0.0'}
+{'- drive.google.com': '0.0.0.0', '- mail.google.com': '0.0.0.0', '- google.com': '0.0.0.0'}
+json  {'drive.google.com': '108.177.14.194', 'mail.google.com': '0.0.0.0', 'google.com': '0.0.0.0'}
+yaml  {'- drive.google.com': '108.177.14.194', '- mail.google.com': '0.0.0.0', '- google.com': '0.0.0.0'}
+json  {'drive.google.com': '108.177.14.194', 'mail.google.com': '74.125.131.83', 'google.com': '0.0.0.0'}
+yaml  {'- drive.google.com': '108.177.14.194', '- mail.google.com': '74.125.131.83', '- google.com': '0.0.0.0'}
+json  {'drive.google.com': '108.177.14.194', 'mail.google.com': '74.125.131.83', 'google.com': '173.194.222.100'}
+yaml  {'- drive.google.com': '108.177.14.194', '- mail.google.com': '74.125.131.83', '- google.com': '173.194.222.100'}
+json  {'drive.google.com': '108.177.14.194', 'mail.google.com': '74.125.131.83', 'google.com': '173.194.222.100'}
+yaml  {'- drive.google.com': '108.177.14.194', '- mail.google.com': '74.125.131.83', '- google.com': '173.194.222.100'}
+json  {'drive.google.com': '108.177.14.194', 'mail.google.com': '74.125.131.83', 'google.com': '173.194.222.100'}
+yaml  {'- drive.google.com': '108.177.14.194', '- mail.google.com': '74.125.131.83', '- google.com': '173.194.222.100'}
+json  {'drive.google.com': '108.177.14.194', 'mail.google.com': '74.125.131.83', 'google.com': '173.194.222.100'}
+yaml  {'- drive.google.com': '108.177.14.194', '- mail.google.com': '74.125.131.83', '- google.com': '173.194.222.100'}
+^CTraceback (most recent call last):
+  File "./dz4.py", line 23, in <module>
+    time.sleep(5)
+KeyboardInterrupt
 ```
 
 ### json-файл(ы), который(е) записал ваш скрипт:
 ```json
-???
+vagrant@vagrant:~$ cat hosts.json
+{"drive.google.com": "108.177.14.194", "mail.google.com": "74.125.131.18", "google.com": "173.194.222.113"
 ```
 
 ### yml-файл(ы), который(е) записал ваш скрипт:
 ```yaml
-???
+vagrant@vagrant:~$ cat hosts.yaml
+'- drive.google.com': 108.177.14.194
+'- google.com': 173.194.222.113
+'- mail.google.com': 74.125.131.18
 ```
