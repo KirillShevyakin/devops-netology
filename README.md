@@ -39,4 +39,13 @@ Vagrant
 Ansible  
 Приложить вывод команд установленных версий каждой из программ, оформленный в markdown.  
 
-### Ответ
+### Ответ  
+
+1) VirtualBox  
+![image](https://user-images.githubusercontent.com/93198418/163383677-9d1b2b2a-0936-4579-958d-20959243724b.png)  
+
+2) Vagrant  
+![image](https://user-images.githubusercontent.com/93198418/163384491-0aa2cdd4-82cf-426a-8e58-5af6ceced8d0.png)  
+
+3) Ansible
+
