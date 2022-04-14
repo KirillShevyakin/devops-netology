@@ -47,7 +47,7 @@ Ansible
 2) Vagrant  
 ![image](https://user-images.githubusercontent.com/93198418/163384491-0aa2cdd4-82cf-426a-8e58-5af6ceced8d0.png)  
 
-3) Ansible
+3) Ansible  
 ![image](https://user-images.githubusercontent.com/93198418/163388818-20c46387-0f69-4021-b271-1cfee62e7f9f.png)  
 
 ## Задача 4 (*)  
