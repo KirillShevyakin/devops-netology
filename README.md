@@ -48,7 +48,7 @@ Ansible
 ![image](https://user-images.githubusercontent.com/93198418/163384491-0aa2cdd4-82cf-426a-8e58-5af6ceced8d0.png)  
 
 3) Ansible  
-![image](https://user-images.githubusercontent.com/93198418/163569209-c10a7c06-5d61-4072-988e-46c534d428bc.png)  
+![image](https://user-images.githubusercontent.com/93198418/163811121-31cb6fd2-2afd-4a9f-a7a5-8e3c5fb560c0.png)   
 
 ## Задача 4 (*)  
 
