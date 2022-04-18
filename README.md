@@ -60,6 +60,4 @@ docker ps
 
 ### Ответ  
 
-
-
-
+![image](https://user-images.githubusercontent.com/93198418/163810964-3665eaae-35b7-435f-b9c8-e9bf75eb5b7b.png)  
