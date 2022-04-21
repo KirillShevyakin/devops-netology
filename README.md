@@ -82,8 +82,26 @@ https://hub.docker.com/r/kirillshevyakin/nginx
 - Добавьте еще один файл в папку ```/data``` на хостовой машине;
 - Подключитесь во второй контейнер и отобразите листинг и содержание файлов в ```/data``` контейнера.
 
+### Ответ  
+
+1) root@server1:/home/vagrant# docker pull centos  
+2) root@server1:/home/vagrant# docker run -d -it -v /data:/data --name centos_1 centos  
+3) root@server1:/home/vagrant# docker pull debian  
+4) root@server1:/home/vagrant# docker run -d -it -v /data:/data --name debian_1 debian  
+5) root@server1:/home/vagrant# docker exec -it centos_1 /bin/bash  
+6) [root@366b60d81236 /]# touch /data/test.txt  
+7) [root@366b60d81236 /]# echo 'netology' > /data/test.txt  
+8) root@server1:/home/vagrant# touch /data/test1.txt  
+9) root@server1:/home/vagrant# docker exec -it debian_1 /bin/bash  
+10) ![image](https://user-images.githubusercontent.com/93198418/164449064-079a2c14-f912-44f0-90bc-c0e2f967430b.png)  
+11) ![image](https://user-images.githubusercontent.com/93198418/164449179-18ec6d7e-33a4-4875-bea7-8eb5784709e0.png)  
+
 ## Задача 4 (*)
 
 Воспроизвести практическую часть лекции самостоятельно.
 
 Соберите Docker образ с Ansible, загрузите на Docker Hub и пришлите ссылку вместе с остальными ответами к задачам.
+
+### Ответ  
+
+https://hub.docker.com/r/kirillshevyakin/ansible
