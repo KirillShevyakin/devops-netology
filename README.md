@@ -22,5 +22,5 @@
 
 ### Ответ  
 
-
+![image](https://user-images.githubusercontent.com/93198418/165505968-aafc2b15-2d09-477e-99bf-484fa485aafd.png)
 
