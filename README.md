@@ -29,3 +29,8 @@
 Создать ваш первый готовый к боевой эксплуатации компонент мониторинга, состоящий из стека микросервисов.
 
 ### Ответ
+
+![image](https://user-images.githubusercontent.com/93198418/165509236-8c75dc57-4613-4b07-87cc-b69055196a57.png)  
+![image](https://user-images.githubusercontent.com/93198418/165509446-2dfbd79d-162f-4189-ba93-f493417577d7.png)  
+
+
