@@ -32,6 +32,7 @@ docker node ls
 ```
 
 ### Ответ  
+
 ![image](https://user-images.githubusercontent.com/93198418/166879860-8d333a0d-080c-4677-a3a7-aad22d161175.png)  
 
 ## Задача 3
@@ -42,6 +43,10 @@ docker node ls
 ```
 docker service ls
 ```
+
+### Ответ  
+
+![image](https://user-images.githubusercontent.com/93198418/166880131-1b01d4a2-f3ec-418c-a995-e781a8dc1d32.png)  
 
 ## Задача 4 (*)
 
