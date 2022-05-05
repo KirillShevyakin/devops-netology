@@ -56,3 +56,6 @@ docker service ls
 docker swarm update --autolock=true
 ```
 
+### Ответ  
+
+docker swarm update --autolock=true - это включение автоблокировки существующего роя. Это нужно для того, чтобы изменения в рое можно было делать только по специальному ключу, сгенерированному docker.
