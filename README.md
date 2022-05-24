@@ -16,12 +16,13 @@ version: "3.1"
 services:
   postgres:
     image: postgres:12
+    restart: always
     environment:
-      POSTGRES_DB: "netologydb"
-      POSTGRES_USER: "netologydbuser"
-      POSTGRES_PASSWORD: "Jx4LnmGHAPic9g"
+      - POSTGRES_DB=netologydb
+      - POSTGRES_USER=netologydbuser
+      - POSTGRES_PASSWORD=Jx4LnmGHAPic9g
     ports:
-      - "5432:5432"
+      - ${POSTGRES_PORT:-5432}:5432
     volumes:
       - /mnt/db:/var/lib/postgresql/data
       - /mnt/backup:/backup
