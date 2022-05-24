@@ -19,7 +19,7 @@ services:
     environment:
       POSTGRES_DB: "netologydb"
       POSTGRES_USER: "netologydbuser"
-      POSTGRES_PASSWORD: "5y3f4$EFNRRgAY"
+      POSTGRES_PASSWORD: "Jx4LnmGHAPic9g"
     ports:
       - "5432:5432"
     volumes:
