@@ -164,4 +164,31 @@ SELECT id, фамилия, "страна проживания", заказ FROM 
 
 Приведите список операций, который вы применяли для бэкапа данных и восстановления. 
 
----
+### Ответ  
+
+Создайте бэкап БД test_db и поместите его в volume, предназначенный для бэкапов (см. Задачу 1).  
+pg_dump test_db > /backup/test_db-backup  
+
+Остановите контейнер с PostgreSQL (но не удаляйте volumes).  
+docker stop 6_2_postgres_1  
+
+Поднимите новый пустой контейнер с PostgreSQL.  
+root@test-netology:/mnt/6_2# cd 6_2_6/  
+root@test-netology:/mnt/6_2/6_2_6# nano docker-compose.yml  
+```  
+version: "3.1"
+services:
+  postgres:
+    image: postgres:12
+    restart: always
+    ports:
+      - ${POSTGRES_PORT:-5432}:5432
+    volumes:
+      - /mnt/backup:/backup
+```  
+root@test-netology:/mnt/6_2/6_2_6# docker-compose up -d  
+
+Восстановите БД test_db в новом контейнере.  
+
+
+
