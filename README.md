@@ -64,7 +64,8 @@ services:
 ![image](https://user-images.githubusercontent.com/93198418/170049616-a022d012-e927-44c2-a32f-c9ebf54acebd.png)  
 
 - SQL-запрос для выдачи списка пользователей с правами над таблицами test_db
-
+![image](https://user-images.githubusercontent.com/93198418/170231304-3741349c-fea4-4081-848b-38c8f00d6a6a.png)  
+![image](https://user-images.githubusercontent.com/93198418/170231474-0ca76ffc-1645-4750-8ddf-f010a8cf3e47.png)  
 
 - список пользователей с правами над таблицами test_db  
 ![image](https://user-images.githubusercontent.com/93198418/170051506-f9e8a6cf-cd56-45f0-98b8-61f1dfadf2db.png)  
