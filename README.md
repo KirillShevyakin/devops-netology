@@ -128,7 +128,7 @@ services:
 
 ### Ответ  
 
-update clients set заказ = 3 where фамилия = 'Иванов Иван Иванович';
+update clients set заказ = 3 where фамилия = 'Иванов Иван Иванович';  
 update clients set заказ = 4 where фамилия = 'Петров Петр Петрович';  
 update clients set заказ = 5 where фамилия = 'Иоганн Себастьян Бах';  
 SELECT id, фамилия, "страна проживания", заказ FROM clients WHERE заказ notnull;  
