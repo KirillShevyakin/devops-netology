@@ -124,7 +124,16 @@ services:
 
 Приведите SQL-запрос для выдачи всех пользователей, которые совершили заказ, а также вывод данного запроса.
  
-Подсказк - используйте директиву `UPDATE`.
+Подсказка - используйте директиву `UPDATE`.
+
+### Ответ  
+
+update clients set заказ = 3 where фамилия = 'Иванов Иван Иванович';
+update clients set заказ = 4 where фамилия = 'Петров Петр Петрович';  
+update clients set заказ = 5 where фамилия = 'Иоганн Себастьян Бах';  
+SELECT id, фамилия, "страна проживания", заказ FROM clients WHERE заказ notnull;  
+![image](https://user-images.githubusercontent.com/93198418/170244659-085e0963-3bc5-4af6-a9d7-17c1ddcf31ee.png)
+
 
 ## Задача 5
 
