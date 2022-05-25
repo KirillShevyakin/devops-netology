@@ -54,6 +54,24 @@ services:
 - SQL-запрос для выдачи списка пользователей с правами над таблицами test_db
 - список пользователей с правами над таблицами test_db
 
+### Ответ
+
+- итоговый список БД после выполнения пунктов выше  
+![image](https://user-images.githubusercontent.com/93198418/170047020-a981fc17-e70c-4354-951d-0c1530c84ffb.png)  
+
+- описание таблиц (describe)  
+![image](https://user-images.githubusercontent.com/93198418/170049334-098e547c-5ece-49b3-900d-ca822e244a68.png)  
+![image](https://user-images.githubusercontent.com/93198418/170049616-a022d012-e927-44c2-a32f-c9ebf54acebd.png)  
+
+- SQL-запрос для выдачи списка пользователей с правами над таблицами test_db
+
+
+- список пользователей с правами над таблицами test_db  
+![image](https://user-images.githubusercontent.com/93198418/170051506-f9e8a6cf-cd56-45f0-98b8-61f1dfadf2db.png)  
+![image](https://user-images.githubusercontent.com/93198418/170051651-7ab317e7-7d0b-4d70-a862-088aa965025a.png)  
+
+
+
 ## Задача 3
 
 Используя SQL синтаксис - наполните таблицы следующими тестовыми данными:
