@@ -102,6 +102,11 @@ services:
     - запросы 
     - результаты их выполнения.
 
+### Ответ  
+- вычислите количество записей для каждой таблицы  
+![image](https://user-images.githubusercontent.com/93198418/170188707-2a0d3c0e-b97a-46be-b64f-46b146eaffb9.png)  
+![image](https://user-images.githubusercontent.com/93198418/170188860-79b2eaa3-30cc-43d2-9489-80e10b7f09f0.png)  
+
 ## Задача 4
 
 Часть пользователей из таблицы clients решили оформить заказы из таблицы orders.
