@@ -173,22 +173,31 @@ pg_dump test_db > /backup/test_db-backup
 docker stop 6_2_postgres_1  
 
 Поднимите новый пустой контейнер с PostgreSQL.  
-root@test-netology:/mnt/6_2# cd 6_2_6/  
-root@test-netology:/mnt/6_2/6_2_6# nano docker-compose.yml  
-```  
+mkdir 6_2_6  
+cd 6_2_6/  
+nano docker-compose.yml  
+```
 version: "3.1"
 services:
   postgres:
     image: postgres:12
     restart: always
+    environment:
+      - POSTGRES_PASSWORD=Jx4LnmGHAPic9g
     ports:
       - ${POSTGRES_PORT:-5432}:5432
     volumes:
-      - /mnt/backup:/backup
+       - /mnt/backup:/backup
 ```  
-root@test-netology:/mnt/6_2/6_2_6# docker-compose up -d  
+docker-compose up -d  
+![image](https://user-images.githubusercontent.com/93198418/170423154-2079dfdb-3786-40da-9c8a-b21ebce41102.png)  
 
 Восстановите БД test_db в новом контейнере.  
-
+docker exec -it 6_2_6_postgres_1 bash  
+pg_createcluster 12 main  
+pg_ctlcluster 12 main start  
+su postgres  
+psql  
+psql test_db < /backup/test_db-backup  
 
 
