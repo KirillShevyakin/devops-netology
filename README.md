@@ -63,6 +63,16 @@
 - на `MyISAM`
 - на `InnoDB`
 
+### Ответ  
+
+Исследуйте, какой `engine` используется в таблице БД `test_db` и **приведите в ответе**.  
+![image](https://user-images.githubusercontent.com/93198418/172589645-5afdf3b9-a4b4-4fd3-a0e1-d0221aa5e034.png)  
+
+Измените `engine` и **приведите время выполнения и запрос на изменения из профайлера в ответе**:
+- на `MyISAM`
+- на `InnoDB`
+![image](https://user-images.githubusercontent.com/93198418/172590040-73e54dca-a58a-46e9-8773-e86a517a2b78.png)  
+
 ## Задача 4 
 
 Изучите файл `my.cnf` в директории /etc/mysql.
