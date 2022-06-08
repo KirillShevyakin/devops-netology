@@ -87,3 +87,23 @@
 Приведите в ответе измененный файл `my.cnf`.
 
 ---
+
+### Ответ  
+
+- Скорость IO важнее сохранности данных  
+innodb_flush_log_at_trx_commit = 2  
+
+- Нужна компрессия таблиц для экономии места на диске  
+innodb_file_per_table = 1  
+innodb_file_format = Barracuda  
+
+- Размер буффера с незакомиченными транзакциями 1 Мб  
+innodb_log_buffer_size = 1M  
+
+- Буффер кеширования 30% от ОЗУ  
+innodb_buffer_pool_size = 3G  
+
+- Размер файла логов операций 100 Мб  
+innodb_log_file_size = 100M  
+
+![image](https://user-images.githubusercontent.com/93198418/172596606-20136deb-6ff4-481b-ab07-81c974661e3d.png)
