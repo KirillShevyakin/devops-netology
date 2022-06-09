@@ -67,10 +67,42 @@ test_database=# SELECT avg_width FROM pg_stats WHERE tablename='orders';
 
 Можно ли было изначально исключить "ручное" разбиение при проектировании таблицы orders?
 
+### Ответ
+
+test_database=# CREATE TABLE orders_1 ( CHECK ( price > 499 ))INHERITS (orders);  
+test_database=# CREATE TABLE orders_2 ( CHECK ( price <= 499 ))INHERITS (orders);  
+
+Можно ли было изначально исключить "ручное" разбиение при проектировании таблицы orders?  
+Можно. Есть специальная утилита для этого (https://github.com/2gis/partition_magic)  
+
 ## Задача 4
 
 Используя утилиту `pg_dump` создайте бекап БД `test_database`.
 
 Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца `title` для таблиц `test_database`?
 
+### Ответ  
+
+Используя утилиту `pg_dump` создайте бекап БД `test_database`.
+root@65aa5a0e8a5d:/var/lib/postgresql/data/pgdata# pg_dump -U test -d test_database > test_database_dump.sql
+
+Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца `title` для таблиц `test_database`?  
+Открыть файл  
+root@test-netology:/mnt/6_4/pgdata# nano test_database_dump.sql  
+Изменить  
+```
+CREATE TABLE public.orders (  
+    id integer NOT NULL,  
+    title character varying(80) NOT NULL,  
+    price integer DEFAULT 0  
+);  
+```
+На  
+```
+CREATE TABLE public.orders (  
+    id integer NOT NULL,  
+    title character varying(80) NOT NULL UNIQUE,  
+    price integer DEFAULT 0  
+);  
+```
 ---
