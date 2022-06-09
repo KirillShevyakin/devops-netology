@@ -83,7 +83,7 @@ test_database=# CREATE TABLE orders_2 ( CHECK ( price <= 499 ))INHERITS (orders)
 
 ### Ответ  
 
-Используя утилиту `pg_dump` создайте бекап БД `test_database`.
+Используя утилиту `pg_dump` создайте бекап БД `test_database`.  
 root@65aa5a0e8a5d:/var/lib/postgresql/data/pgdata# pg_dump -U test -d test_database > test_database_dump.sql
 
 Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца `title` для таблиц `test_database`?  
