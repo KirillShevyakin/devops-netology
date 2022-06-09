@@ -52,6 +52,11 @@
 
 **Приведите в ответе** команду, которую вы использовали для вычисления и полученный результат.
 
+### Ответ
+
+test_database=# SELECT avg_width FROM pg_stats WHERE tablename='orders';  
+![image](https://user-images.githubusercontent.com/93198418/172781192-382b971d-ae26-4429-b917-3e4cc33f79af.png)
+
 ## Задача 3
 
 Архитектор и администратор БД выяснили, что ваша таблица orders разрослась до невиданных размеров и
