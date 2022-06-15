@@ -1,108 +1,95 @@
 # devops-netology  
 ## Шевякин Кирилл  
 
-# Домашнее задание к занятию "6.4. PostgreSQL"
+# Домашнее задание к занятию "6.5. Elasticsearch"
 
 ## Задача 1
 
-Используя docker поднимите инстанс PostgreSQL (версию 13). Данные БД сохраните в volume.
+В этом задании вы потренируетесь в:
+- установке elasticsearch
+- первоначальном конфигурировании elastcisearch
+- запуске elasticsearch в docker
 
-Подключитесь к БД PostgreSQL используя `psql`.
+Используя докер образ [elasticsearch:7](https://hub.docker.com/_/elasticsearch) как базовый:
 
-Воспользуйтесь командой `\?` для вывода подсказки по имеющимся в `psql` управляющим командам.
+- составьте Dockerfile-манифест для elasticsearch
+- соберите docker-образ и сделайте `push` в ваш docker.io репозиторий
+- запустите контейнер из получившегося образа и выполните запрос пути `/` c хост-машины
 
-**Найдите и приведите** управляющие команды для:
-- вывода списка БД
-- подключения к БД
-- вывода списка таблиц
-- вывода описания содержимого таблиц
-- выхода из psql
+Требования к `elasticsearch.yml`:
+- данные `path` должны сохраняться в `/var/lib`
+- имя ноды должно быть `netology_test`
 
-### Ответ  
+В ответе приведите:
+- текст Dockerfile манифеста
+- ссылку на образ в репозитории dockerhub
+- ответ `elasticsearch` на запрос пути `/` в json виде
 
-- вывода списка БД  
-\l[+]   [PATTERN]      list databases
+Подсказки:
+- при сетевых проблемах внимательно изучите кластерные и сетевые настройки в elasticsearch.yml
+- при некоторых проблемах вам поможет docker директива ulimit
+- elasticsearch в логах обычно описывает проблему и пути ее решения
+- обратите внимание на настройки безопасности такие как `xpack.security.enabled`
+- если докер образ не запускается и падает с ошибкой 137 в этом случае может помочь настройка `-e ES_HEAP_SIZE`
+- при настройке `path` возможно потребуется настройка прав доступа на директорию
 
-- подключения к БД  
-\conninfo              display information about current connection
-
-- вывода списка таблиц  
-\dt[S+] [PATTERN]      list tables
-
-- вывода описания содержимого таблиц  
-\d[S+]  NAME           describe table, view, sequence, or index  
-
-- выхода из psql  
-\q                     quit psql
+Далее мы будем работать с данным экземпляром elasticsearch.
 
 ## Задача 2
 
-Используя `psql` создайте БД `test_database`.
+В этом задании вы научитесь:
+- создавать и удалять индексы
+- изучать состояние кластера
+- обосновывать причину деградации доступности данных
 
-Изучите [бэкап БД](https://github.com/netology-code/virt-homeworks/tree/master/06-db-04-postgresql/test_data).
+Ознакомтесь с [документацией](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html)
+и добавьте в `elasticsearch` 3 индекса, в соответствии со таблицей:
 
-Восстановите бэкап БД в `test_database`.
+| Имя | Количество реплик | Количество шард |
+|-----|-------------------|-----------------|
+| ind-1| 0 | 1 |
+| ind-2 | 1 | 2 |
+| ind-3 | 2 | 4 |
 
-Перейдите в управляющую консоль `psql` внутри контейнера.
+Получите список индексов и их статусов, используя API и **приведите в ответе** на задание.
 
-Подключитесь к восстановленной БД и проведите операцию ANALYZE для сбора статистики по таблице.
+Получите состояние кластера `elasticsearch`, используя API.
 
-Используя таблицу [pg_stats](https://postgrespro.ru/docs/postgresql/12/view-pg-stats), найдите столбец таблицы `orders` 
-с наибольшим средним значением размера элементов в байтах.
+Как вы думаете, почему часть индексов и кластер находится в состоянии yellow?
 
-**Приведите в ответе** команду, которую вы использовали для вычисления и полученный результат.
+Удалите все индексы.
 
-### Ответ
+**Важно**
 
-test_database=# SELECT avg_width FROM pg_stats WHERE tablename='orders';  
-![image](https://user-images.githubusercontent.com/93198418/172781192-382b971d-ae26-4429-b917-3e4cc33f79af.png)
+При проектировании кластера elasticsearch нужно корректно рассчитывать количество реплик и шард,
+иначе возможна потеря данных индексов, вплоть до полной, при деградации системы.
 
 ## Задача 3
 
-Архитектор и администратор БД выяснили, что ваша таблица orders разрослась до невиданных размеров и
-поиск по ней занимает долгое время. Вам, как успешному выпускнику курсов DevOps в нетологии предложили
-провести разбиение таблицы на 2 (шардировать на orders_1 - price>499 и orders_2 - price<=499).
+В данном задании вы научитесь:
+- создавать бэкапы данных
+- восстанавливать индексы из бэкапов
 
-Предложите SQL-транзакцию для проведения данной операции.
+Создайте директорию `{путь до корневой директории с elasticsearch в образе}/snapshots`.
 
-Можно ли было изначально исключить "ручное" разбиение при проектировании таблицы orders?
+Используя API [зарегистрируйте](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-register-repository.html#snapshots-register-repository)
+данную директорию как `snapshot repository` c именем `netology_backup`.
 
-### Ответ
+**Приведите в ответе** запрос API и результат вызова API для создания репозитория.
 
-test_database=# CREATE TABLE orders_1 ( CHECK ( price > 499 ))INHERITS (orders);  
-test_database=# CREATE TABLE orders_2 ( CHECK ( price <= 499 ))INHERITS (orders);  
+Создайте индекс `test` с 0 реплик и 1 шардом и **приведите в ответе** список индексов.
 
-Можно ли было изначально исключить "ручное" разбиение при проектировании таблицы orders?  
-Можно. Есть специальная утилита для этого (https://github.com/2gis/partition_magic)  
+[Создайте `snapshot`](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-take-snapshot.html)
+состояния кластера `elasticsearch`.
 
-## Задача 4
+**Приведите в ответе** список файлов в директории со `snapshot`ами.
 
-Используя утилиту `pg_dump` создайте бекап БД `test_database`.
+Удалите индекс `test` и создайте индекс `test-2`. **Приведите в ответе** список индексов.
 
-Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца `title` для таблиц `test_database`?
+[Восстановите](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-restore-snapshot.html) состояние
+кластера `elasticsearch` из `snapshot`, созданного ранее.
 
-### Ответ  
+**Приведите в ответе** запрос к API восстановления и итоговый список индексов.
 
-Используя утилиту `pg_dump` создайте бекап БД `test_database`.  
-root@65aa5a0e8a5d:/var/lib/postgresql/data/pgdata# pg_dump -U test -d test_database > test_database_dump.sql
-
-Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца `title` для таблиц `test_database`?  
-Открыть файл  
-root@test-netology:/mnt/6_4/pgdata# nano test_database_dump.sql  
-Изменить  
-```
-CREATE TABLE public.orders (  
-    id integer NOT NULL,  
-    title character varying(80) NOT NULL,  
-    price integer DEFAULT 0  
-);  
-```
-На  
-```
-CREATE TABLE public.orders (  
-    id integer NOT NULL,  
-    title character varying(80) NOT NULL UNIQUE,  
-    price integer DEFAULT 0  
-);  
-```
----
+Подсказки:
+- возможно вам понадобится доработать `elasticsearch.yml` в части директивы `path.repo` и перезапустить `elasticsearch`
