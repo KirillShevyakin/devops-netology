@@ -144,3 +144,24 @@ docker pull kirillshevyakin/elasticsearch
 
 Подсказки:
 - возможно вам понадобится доработать `elasticsearch.yml` в части директивы `path.repo` и перезапустить `elasticsearch`
+
+### Ответ  
+Создайте директорию `{путь до корневой директории с elasticsearch в образе}/snapshots`.  
+Уже создана /var/lib/data/elasticsearch/snapshots  
+![image](https://user-images.githubusercontent.com/93198418/174253661-7412f111-453e-413f-9dd1-fa105ed7ecdd.png)  
+
+**Приведите в ответе** запрос API и результат вызова API для создания репозитория.  
+![image](https://user-images.githubusercontent.com/93198418/174268733-5347c143-a52d-47cc-9ef3-aa46b3c7cd56.png)
+![image](https://user-images.githubusercontent.com/93198418/174269559-a514fed5-05fc-42e9-a027-0e365975241f.png)  
+
+Создайте индекс `test` с 0 реплик и 1 шардом и **приведите в ответе** список индексов.  
+![image](https://user-images.githubusercontent.com/93198418/174270267-cd2c6c99-e5dd-4731-862a-d38f45de1210.png)  
+
+**Приведите в ответе** список файлов в директории со `snapshot`ами.  
+![image](https://user-images.githubusercontent.com/93198418/174270927-7e70732e-1bdc-4525-b012-55e658d46c5b.png)  
+
+Удалите индекс `test` и создайте индекс `test-2`. **Приведите в ответе** список индексов.  
+![image](https://user-images.githubusercontent.com/93198418/174271354-4651d3da-bf91-4684-8340-50ff6a64febe.png)  
+
+**Приведите в ответе** запрос к API восстановления и итоговый список индексов.  
+![image](https://user-images.githubusercontent.com/93198418/174281805-23fbeb16-4e15-4f62-87f1-c1f0ed38a480.png)
