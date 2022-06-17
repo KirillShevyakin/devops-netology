@@ -66,7 +66,7 @@ CMD ["bin/elasticsearch"]
 ```
 
 - ссылку на образ в репозитории dockerhub  
-docker pull kirillshevyakin/elasticsearch  
+ docker push kirillshevyakin/elasticsearch:7.17.4 
 
 - ответ `elasticsearch` на запрос пути `/` в json виде  
 ![image](https://user-images.githubusercontent.com/93198418/174241000-642fb090-d644-471f-9fb5-8eb546ec1152.png)  
