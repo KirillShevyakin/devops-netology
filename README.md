@@ -35,6 +35,43 @@
 
 Далее мы будем работать с данным экземпляром elasticsearch.
 
+### Ответ  
+- текст Dockerfile манифеста  
+```
+FROM elasticsearch:7.17.4
+
+ENV TZ=Europe/Moscow
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt update -y
+RUN apt install mc nano net-tools -y
+
+COPY elasticsearch.yml /usr/share/elasticsearch/config/
+
+ENV ES_HOME=/var/lib/data/elasticsearch
+
+RUN mkdir /var/lib/logs && \
+    chown elasticsearch:elasticsearch /var/lib/logs && \
+    mkdir /var/lib/nodes && \
+    chown elasticsearch:elasticsearch /var/lib/nodes && \
+    mkdir /var/lib/data && \
+    mkdir /var/lib/data/elasticsearch && \
+    mkdir /var/lib/data/elasticsearch/snapshots && \
+    chown -R elasticsearch:elasticsearch /var/lib/data
+
+EXPOSE 9200
+
+USER elasticsearch
+CMD ["bin/elasticsearch"]
+```
+
+- ссылку на образ в репозитории dockerhub  
+docker pull kirillshevyakin/elasticsearch  
+
+- ответ `elasticsearch` на запрос пути `/` в json виде  
+![image](https://user-images.githubusercontent.com/93198418/174241000-642fb090-d644-471f-9fb5-8eb546ec1152.png)  
+
+
 ## Задача 2
 
 В этом задании вы научитесь:
