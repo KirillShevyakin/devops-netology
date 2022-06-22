@@ -84,4 +84,10 @@ Sometimes the “during query” form happens when millions of rows are being se
 
 Как бы вы решили данную проблему?
 
+### Ответ  
+
+Кончается оперативная память и ОС завершает процессы использующие память, чтобы предотвратить падение всей системы. Чтобы решить эту проблему, можно увеличить объем памяти или выставить ограничение использования памяти в настройках postgresql, или и то и другое.    
+В инструкции это выглядит так:  
+When there is not enough memory left, the OOM killer invokes and kills the PostgreSQL process. Some people disable that process, but it is not recommended. You need to check the memory setting according to your hardware.
+
 ---
