@@ -53,7 +53,7 @@ db.killOp()
 
 Перед выполнением задания познакомьтесь с документацией по [Common Mysql errors](https://dev.mysql.com/doc/refman/8.0/en/common-errors.html).
 
-Вы подняли базу данных MySQL для использования в гис-системе. При росте количества записей, в таблицах базы,
+Вы подняли базу данных MySQL для использования в гис-системе. При росте количества записей в таблицах базы,
 пользователи начали жаловаться на ошибки вида:
 ```python
 InterfaceError: (InterfaceError) 2013: Lost connection to MySQL server during query u'SELECT..... '
@@ -61,7 +61,13 @@ InterfaceError: (InterfaceError) 2013: Lost connection to MySQL server during qu
 
 Как вы думаете, почему это начало происходить и как локализовать проблему?
 
-Какие пути решения данной проблемы вы можете предложить?
+Какие пути решения данной проблемы вы можете предложить?  
+
+### Ответ  
+
+Поскольку это стало происходить при росте количества записей в таблицах базы, то можно предположить что дело в том, что в результате выполнения запроса выдается много-много строк и не хватает времени на выдачу запроса. Для решения этой проблемы можно увеличить ``` net-read-timeout ```  
+В инструкции это обозначено так:  
+Sometimes the “during query” form happens when millions of rows are being sent as part of one or more queries. If you know that this is happening, you should try increasing net_read_timeout from its default of 30 seconds to 60 seconds or longer, sufficient for the data transfer to complete.
 
 ## Задача 4
 
