@@ -37,7 +37,7 @@ Packer
 Ссылку на репозиторий с исходной конфигурацией терраформа.  
 
 
-![image](https://user-images.githubusercontent.com/93198418/176438053-5519b0d5-ad19-432d-b9e6-c57461cb8b23.png)  
+![image](https://user-images.githubusercontent.com/93198418/176438741-956436b6-af4b-4fab-9173-2cf0a793df1a.png)    
 ![image](https://user-images.githubusercontent.com/93198418/176438269-5abef94a-7155-4962-9e25-7777b2b4d8be.png)  
 ![image](https://user-images.githubusercontent.com/93198418/176438379-67cc344f-fbd1-46e5-9916-85e74447968f.png)  
 ![image](https://user-images.githubusercontent.com/93198418/176438519-5892c206-f8dc-4925-aac1-bd0e057e0ea0.png)  
