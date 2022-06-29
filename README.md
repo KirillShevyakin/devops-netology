@@ -46,4 +46,10 @@ Packer
 Вот созданная машина  
 ![image](https://user-images.githubusercontent.com/93198418/176452574-79efaf46-f2d4-4c89-a7db-18a32b5c57b5.png)
 
+Удалил все  
+![image](https://user-images.githubusercontent.com/93198418/176453015-705ee630-3e42-40d7-b4e8-bd9def7bb0b9.png)  
+![image](https://user-images.githubusercontent.com/93198418/176453937-92c188be-c972-413a-bf60-5a8083c81582.png)  
+![image](https://user-images.githubusercontent.com/93198418/176454079-6b2dd995-8f0e-4bb6-b2b7-b5bc45b9fe49.png)  
+
+
 
