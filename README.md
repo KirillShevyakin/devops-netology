@@ -41,6 +41,18 @@ dynamodb.
 ### Ответ  
 
 ![image](https://user-images.githubusercontent.com/93198418/177530577-454bfec8-0b57-47cc-8604-4b13413b83c5.png)  
+![image](https://user-images.githubusercontent.com/93198418/177538528-ce37fad8-e915-4eb8-bca0-7e5425983907.png)  
+![image](https://user-images.githubusercontent.com/93198418/177538662-f5e96b51-e1d9-4234-81e9-22f74e9cc889.png)  
+![image](https://user-images.githubusercontent.com/93198418/177538735-a382d665-99a9-4c21-8ef3-9a49dfff3d59.png)  
+![image](https://user-images.githubusercontent.com/93198418/177538807-e8d01cc7-7208-45c2-a4fe-e7e774e03adc.png)  
+![image](https://user-images.githubusercontent.com/93198418/177538864-0d524860-23a7-4a83-b766-a473bb799763.png)  
+
+Результат:  
+![image](https://user-images.githubusercontent.com/93198418/177539665-50c504e8-27d7-4639-99fb-bf549e7c035c.png)  
+![image](https://user-images.githubusercontent.com/93198418/177539835-6b4562d2-143d-441b-bc64-73a5bbb1f697.png)  
+
+
+
 
 
 
