@@ -40,4 +40,7 @@ dynamodb.
 
 ### Ответ  
 
+![image](https://user-images.githubusercontent.com/93198418/177530577-454bfec8-0b57-47cc-8604-4b13413b83c5.png)  
+
+
 
