@@ -19,6 +19,12 @@
 
 ### Ответ  
 
+В cloud зарегистрировался
+![image](https://user-images.githubusercontent.com/93198418/177744947-f92d6175-0de0-4e28-b878-3b83ab1231c3.png)  
+![image](https://user-images.githubusercontent.com/93198418/177745171-2df5b5f7-de2b-44e1-9b5b-7febbee9530b.png)  
+
+При выполнении скрипта - ошибка 403  
+![image](https://user-images.githubusercontent.com/93198418/177745398-4e2c76a0-8f1f-4c80-90a6-2787c4a75169.png)
 
 ## Задача 2. Написать серверный конфиг для атлантиса. 
 
