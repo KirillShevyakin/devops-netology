@@ -70,5 +70,21 @@ https://github.com/KirillShevyakin/devops-netology.git
 ресурс `aws_instance` без помощи модуля?  
 Мне кажется, использование модулей сильно облегчает работу. Я буду использовать модули в работе.  
 
+В рамках предпоследнего задания был создан ec2 при помощи ресурса `aws_instance`. 
+Создайте аналогичный инстанс при помощи найденного модуля.  
+На aws из-за сложивщейся обстановки это сделать невозможно.
+В yandex-cloud можно использовать, например так:  
+```
+module "server" {
+    count         = 5
+    source        = "./module_server"
+    some_variable = some_value
+    network_id    = module.network.network_id
+}
 
+module "network" {  
+    source              = "./module_network"
+    some_other_variable = some_other_value
+}
+```
 
