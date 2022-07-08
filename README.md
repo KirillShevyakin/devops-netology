@@ -49,7 +49,7 @@
 ![image](https://user-images.githubusercontent.com/93198418/177942073-fd2b926f-ccd5-4ba9-8847-21a72a19a6ca.png)  
 
 В качестве результата приложите ссылку на файлы `server.yaml` и `atlantis.yaml`.
-
+https://github.com/KirillShevyakin/devops-netology.git  
 
 ## Задача 3. Знакомство с каталогом модулей. 
 
