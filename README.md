@@ -42,7 +42,20 @@
         fmt.Println(output)    
     }
     ```
- 
+
+### Ответ  
+```
+package main
+  import "fmt"
+  func main() {
+    var foot float64
+      fmt.Print("Type foot: ")
+      fmt.Scanf("%f", &foot)           
+      result := foot * 0.3048 
+      fmt.Println("Meters:", result )
+        }
+```  
+
 1. Напишите программу, которая найдет наименьший элемент в любом заданном списке, например:
     ```
     x := []int{48,96,86,68,57,82,63,70,37,34,83,27,19,97,9,17,}
