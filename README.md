@@ -47,9 +47,7 @@
 1 вариант  
 ```  
 package main
-
 import "fmt"
-
 func main() {
 	fmt.Print("10 метров = ")
 	input := 10.0
@@ -62,9 +60,7 @@ func main() {
 2 вариант  
 ```
 package main
-
 import "fmt"
-
 func main() {
 	fmt.Print("Введите количество метров:")
 	var input float64
