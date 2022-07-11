@@ -57,6 +57,8 @@ func main() {
 	fmt.Println(output, "футов")
 }
 ```  
+![image](https://user-images.githubusercontent.com/93198418/178203390-1fa28332-4143-4cf8-b0d2-93ddabfc999c.png)  
+
 2 вариант  
 ```
 package main
@@ -68,9 +70,11 @@ func main() {
 	var input float64
 	fmt.Scanf("%f", &input)
 	output := input * 0.3048
-	fmt.Println(input, "метров", output, "футов")
+	fmt.Println(input, "метров =", output, "футов")
 	}
 ```
+![image](https://user-images.githubusercontent.com/93198418/178203575-e95eaf35-f1b5-4e6c-867a-d016350ddcda.png)  
+
 
 1. Напишите программу, которая найдет наименьший элемент в любом заданном списке, например:
     ```
