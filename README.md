@@ -41,7 +41,37 @@
     
         fmt.Println(output)    
     }
-    ```
+    ```  
+    
+### Ответ
+1 вариант  
+```  
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Print("10 метров = ")
+	input := 10.0
+	output := input * 0.3048
+	fmt.Println(output, "футов")
+}
+```  
+2 вариант  
+```
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Print("Введите количество метров:")
+	var input float64
+	fmt.Scanf("%f", &input)
+	output := input * 0.3048
+	fmt.Println(input, "метров", output, "футов")
+	}
+```
+
 1. Напишите программу, которая найдет наименьший элемент в любом заданном списке, например:
     ```
     x := []int{48,96,86,68,57,82,63,70,37,34,83,27,19,97,9,17,}
