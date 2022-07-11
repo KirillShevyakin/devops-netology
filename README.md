@@ -11,7 +11,8 @@
 1. Воспользуйтесь инструкций с официального сайта: [https://golang.org/](https://golang.org/).  
 ![image](https://user-images.githubusercontent.com/93198418/178198548-a53daa8e-0eac-43b9-ac30-b4ba48d28c24.png)  
 
-3. Так же для тестирования кода можно использовать песочницу: [https://play.golang.org/](https://play.golang.org/).
+3. Так же для тестирования кода можно использовать песочницу: [https://play.golang.org/](https://play.golang.org/).  
+![image](https://user-images.githubusercontent.com/93198418/178198699-17e59ad1-6406-4d47-b82c-43197688d91a.png)  
 
 ## Задача 2. Знакомство с gotour.
 У Golang есть обучающая интерактивная консоль [https://tour.golang.org/](https://tour.golang.org/). 
