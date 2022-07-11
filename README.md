@@ -5,6 +5,7 @@
 
 С `golang` в рамках курса, мы будем работать не много, поэтому можно использовать любой IDE. 
 Но рекомендуем ознакомиться с [GoLand](https://www.jetbrains.com/ru-ru/go/).  
+![image](https://user-images.githubusercontent.com/93198418/178197154-4c7d4d79-b53b-4af3-9dc1-25b8b79642d1.png)  
 
 ## Задача 1. Установите golang.
 1. Воспользуйтесь инструкций с официального сайта: [https://golang.org/](https://golang.org/).
