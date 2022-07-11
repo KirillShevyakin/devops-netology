@@ -8,8 +8,10 @@
 ![image](https://user-images.githubusercontent.com/93198418/178197154-4c7d4d79-b53b-4af3-9dc1-25b8b79642d1.png)  
 
 ## Задача 1. Установите golang.
-1. Воспользуйтесь инструкций с официального сайта: [https://golang.org/](https://golang.org/).
-2. Так же для тестирования кода можно использовать песочницу: [https://play.golang.org/](https://play.golang.org/).
+1. Воспользуйтесь инструкций с официального сайта: [https://golang.org/](https://golang.org/).  
+![image](https://user-images.githubusercontent.com/93198418/178198548-a53daa8e-0eac-43b9-ac30-b4ba48d28c24.png)  
+
+3. Так же для тестирования кода можно использовать песочницу: [https://play.golang.org/](https://play.golang.org/).
 
 ## Задача 2. Знакомство с gotour.
 У Golang есть обучающая интерактивная консоль [https://tour.golang.org/](https://tour.golang.org/). 
