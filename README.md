@@ -38,16 +38,19 @@ DataSourcesMap: map[string]*schema.Resource{
 2) Для создания очереди сообщений SQS используется ресурс `aws_sqs_queue` у которого есть параметр `name`.  
 
 С каким другим параметром конфликтует `name`? Приложите строчку кода, в которой это указано.  
+
 'name' конфликтует с 'name_prefix'  
 ConflictsWith: []string{"name_prefix"},  
 ![image](https://user-images.githubusercontent.com/93198418/178954510-38087ac7-1263-4885-8bfa-3a3eed06cbee.png)  
 
 Какая максимальная длина имени?  
+
 Длина имени не может быть больше 80 символов  
 errors = append(errors, fmt.Errorf("%q cannot be longer than 80 characters", k))  
 ![image](https://user-images.githubusercontent.com/93198418/178955256-5125fd73-6f51-47b9-9095-921c0d4dd5d0.png)  
 
 Какому регулярному выражению должно подчиняться имя?  
+
 Латинские большие-маленькие буквы , цифры, знак подчеркивания + .fifo в конце  
 if !regexp.MustCompile(`^[0-9A-Za-z-_]+(\.fifo)?$`).MatchString(value) {  
 ![image](https://user-images.githubusercontent.com/93198418/178957153-719b5f24-6651-4529-ad30-e6082e696bae.png)  
