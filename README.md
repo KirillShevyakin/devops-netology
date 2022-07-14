@@ -27,12 +27,12 @@
 1) Найдите, где перечислены все доступные `resource` и `data_source`, приложите ссылку на эти строки в коде на 
 гитхабе.   
 
-resource - https://github.com/hashicorp/terraform-provider-aws/blob/8e4d8a3f3f781b83f96217c2275f541c893fec5a/aws/provider.go#L411  
+- resource - https://github.com/hashicorp/terraform-provider-aws/blob/8e4d8a3f3f781b83f96217c2275f541c893fec5a/aws/provider.go#L411  
 
 ResourcesMap: map[string]*schema.Resource{  
 ![image](https://user-images.githubusercontent.com/93198418/178953130-94eabc88-8144-4f4f-8b37-19ed88fedc05.png)  
 
-data_source - https://github.com/hashicorp/terraform-provider-aws/blob/8e4d8a3f3f781b83f96217c2275f541c893fec5a/aws/provider.go#L169  
+- data_source - https://github.com/hashicorp/terraform-provider-aws/blob/8e4d8a3f3f781b83f96217c2275f541c893fec5a/aws/provider.go#L169  
 
 DataSourcesMap: map[string]*schema.Resource{  
 ![image](https://user-images.githubusercontent.com/93198418/178953477-4d20ea7d-600d-4468-9dfc-0ad17b953a89.png)  
